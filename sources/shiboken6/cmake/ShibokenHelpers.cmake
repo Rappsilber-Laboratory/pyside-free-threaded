@@ -756,8 +756,7 @@ set PATH=${path_dirs_native};%PATH%
     elseif(CMAKE_HOST_APPLE)
         string(REPLACE ";" ":" path_dirs_native "${path_dirs_native}")
         file(WRITE "${wrapper_path}" "#!/bin/bash
-export DYLD_LIBRARY_PATH=${path_dirs_native}:$DYLD_LIBRARY_PATH
-export DYLD_FRAMEWORK_PATH=${path_dirs_native}:$DYLD_FRAMEWORK_PATH
+# Setting DYLD_LIBRARY_PATH/DYLD_FRAMEWORK_PATH is avoided to prevent SIGBUS on Apple Silicon
 $@")
     else()
         string(REPLACE ";" ":" path_dirs_native "${path_dirs_native}")
