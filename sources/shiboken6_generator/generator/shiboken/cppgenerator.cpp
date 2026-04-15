@@ -1213,7 +1213,7 @@ void CppGenerator::writeVirtualMethodNativeVectorCallArgs(TextStream &s,
     for (qsizetype i = 0; i <= last; ++i) {
         const AbstractMetaArgument &arg = arguments.at(i);
         if (func->hasConversionRule(TypeSystem::TargetLangCode, arg.argumentIndex() + 1)) {
-            s << arg.name() + CONV_RULE_OUT_VAR_SUFFIX;
+            s << QString(arg.name() + CONV_RULE_OUT_VAR_SUFFIX);
         } else {
             writeToPythonConversion(s, arg.type(), func->ownerClass(), arg.name());
         }
@@ -4049,7 +4049,7 @@ void CppGenerator::writeMethodCall(TextStream &s, const AbstractMetaFunctionCPtr
 
                     // If have conversion rules I will use this for removed args
                     if (hasConversionRule)
-                        userArgs << arg.name() + CONV_RULE_OUT_VAR_SUFFIX;
+                        userArgs << QString(arg.name() + CONV_RULE_OUT_VAR_SUFFIX);
                     else if (!arg.defaultValueExpression().isEmpty())
                         userArgs.append(CPP_ARG_REMOVED(i));
                 } else {

@@ -30,6 +30,10 @@
 #include "qtcompat.h"
 
 #include <QtCore/qdebug.h>
+#include <QtCore/qthread.h>
+#include <QtCore/qxmlstream.h>
+
+using namespace Qt::StringLiterals;
 #include <QtCore/qdir.h>
 #include <QtCore/qfile.h>
 #include <QtCore/qfileinfo.h>
@@ -3169,7 +3173,7 @@ bool TypeSystemParser::readCodeSnippet(QXmlStreamAttributes *attributes, CodeSni
 
     QString source = snippet.fileName;
     if (!snippet.snippetLabel.isEmpty())
-        source += " ("_L1 + snippet.snippetLabel + u')';
+        source += u" ("_s + snippet.snippetLabel + u')';
     QString content;
     QTextStream str(&content);
     str << "// ========================================================================\n"

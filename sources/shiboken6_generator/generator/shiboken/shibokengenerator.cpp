@@ -1255,7 +1255,7 @@ void ShibokenGenerator::writeArgumentNames(TextStream &s,
             && (func->hasConversionRule(TypeSystem::NativeCode, index)
                 || func->hasConversionRule(TypeSystem::TargetLangCode, index))
             && !func->isConstructor()) {
-           s << CONV_RULE_OUT_VAR_SUFFIX;
+           s << QString(CONV_RULE_OUT_VAR_SUFFIX);
         }
 
         argCount++;
@@ -1407,7 +1407,7 @@ ShibokenGenerator::ArgumentVarReplacementList
             if (argRemoved)
                 ++removed;
             if (argRemoved && hasConversionRule)
-                argValue = arg.name() + CONV_RULE_OUT_VAR_SUFFIX;
+                argValue = QString(arg.name() + CONV_RULE_OUT_VAR_SUFFIX);
             else if (argRemoved || (lastArg && arg.argumentIndex() > lastArg->argumentIndex()))
                 argValue = CPP_ARG_REMOVED(i);
             if (!argRemoved && argValue.isEmpty()) {
@@ -1418,7 +1418,7 @@ ShibokenGenerator::ArgumentVarReplacementList
                                ? pythonArgsAt(argPos) : PYTHON_ARG;
                 } else {
                     argValue = hasConversionRule
-                               ? arg.name() + CONV_RULE_OUT_VAR_SUFFIX
+                               ? QString(arg.name() + CONV_RULE_OUT_VAR_SUFFIX)
                                : CPP_ARG_N(argPos);
                     const auto generatorArg = GeneratorArgument::fromMetaType(type);
                     AbstractMetaType::applyDereference(&argValue, generatorArg.indirections);

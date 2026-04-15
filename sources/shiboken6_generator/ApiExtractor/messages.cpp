@@ -30,6 +30,8 @@
 
 using namespace Qt::StringLiterals;
 
+using namespace Qt::StringLiterals;
+
 // abstractmetabuilder.cpp
 
 static QTextStream &operator<<(QTextStream &s, Access a)
@@ -58,7 +60,7 @@ QString msgModificationCandidates(const AbstractMetaFunctionCPtr &function)
         result += u'"' + signatures.at(i) + u'"';
     }
     if (auto klazz = function->implementingClass())
-        result += " in "_L1 + klazz->name();
+        result += u" in "_s + klazz->name();
     return result;
 }
 
@@ -528,15 +530,15 @@ QString msgInheritTemplateIssue(const AbstractMetaClassPtr &subclass,
                                 const TypeInfo &info,
                                 const QString &what)
 {
-    return "While inheriting template "_L1 + subclass->name()
-           + " from "_L1 + info.toString() + ": "_L1 + what;
+    return u"While inheriting template "_s + subclass->name()
+           + u" from "_s + info.toString() + u": "_s + what;
 }
 
 QString msgIgnoringTemplateParameter(const QString &typeName,
                                      const char *why)
 {
-    return "Ignoring template parameter "_L1 + typeName +
-           ": "_L1 + QLatin1StringView(why);
+    return u"Ignoring template parameter "_s + typeName +
+           u": "_s + QLatin1StringView(why);
 }
 
 QString msgInvalidSmartPointerType(const TypeInfo &i)
@@ -937,8 +939,8 @@ QString msgCannotFindView(const QString &viewedName, const QString &name)
 
 QString msgSnippetError(const QString &context, const char *what)
 {
-    return "Error processing code snippet of "_L1 + context
-           + ": "_L1 + QString::fromUtf8(what);
+    return u"Error processing code snippet of "_s + context
+           + u": "_s + QString::fromUtf8(what);
 }
 
 QString msgUnableToResolveTypedef(const QString &sourceType, const QString &sourceName)
@@ -1036,7 +1038,7 @@ QString msgInvalidLanguageLevel(const QString &l)
 QString msgCannotFindImage(const QString &href, const QString &context,
                            const QStringList &candidates)
 {
-    QString result = "Cannot resolve image "_L1 + href + " for "_L1 + context
+    QString result = u"Cannot resolve image "_s + href + u" for "_s + context
                      + " (tried "_L1;
     for (const auto &candidate : candidates)
         result += QDir::toNativeSeparators(candidate) + u' ';
@@ -1047,19 +1049,19 @@ QString msgCannotFindImage(const QString &href, const QString &context,
 QString msgNotRelative(const QString &path, const QString &dir)
 {
     return QDir::toNativeSeparators(path)
-           + " is not under "_L1 + QDir::toNativeSeparators(dir) + u'.';
+           + u" is not under "_s + QDir::toNativeSeparators(dir) + u'.';
 }
 
 QString msgCannotCreateDir(const QString &dir)
 {
-    return "Cannot create "_L1 + QDir::toNativeSeparators(dir) + u'.';
+    return u"Cannot create "_s + QDir::toNativeSeparators(dir) + u'.';
 }
 
 QString msgCannotCopy(const QFile &source, const QString &target)
 {
-    return "Cannot copy "_L1 + QDir::toNativeSeparators(source.fileName())
-        + " to "_L1 + QDir::toNativeSeparators(target)
-        + ": "_L1 + source.errorString();
+    return u"Cannot copy "_s + QDir::toNativeSeparators(source.fileName())
+        + u" to "_s + QDir::toNativeSeparators(target)
+        + u": "_s + source.errorString();
 }
 
 QString msgCannotFindQDocFile(const AbstractMetaClassCPtr &metaClass,
@@ -1097,15 +1099,15 @@ QString msgCannotCall(const AbstractMetaFunctionCPtr &func,
 QString msgRemoveRedundantOverload(const AbstractMetaFunctionCPtr &func,
                                    const QString &type)
 {
-    return "Removing \""_L1 + func->classQualifiedSignature()
+    return "Removing \u""_s + func->classQualifiedSignature()
            + "\" due to presence of an overload taking a \""_L1
            + type + "\" parameter."_L1;
 }
 
 QString msgCommandLineArguments(const QStringList &argv)
 {
-    QString result = "Host platform: "_L1 + QLatin1StringView(QLibraryInfo::build())
-                     + "\nHost OS      : "_L1 + QSysInfo::prettyProductName()
+    QString result = u"Host platform: "_s + QLatin1StringView(QLibraryInfo::build())
+                     + u"\nHost OS      : "_s + QSysInfo::prettyProductName()
                      + "\nCommand line:\n   "_L1;
     for (const QString &arg : argv) {
         result.append(u' ');
@@ -1154,18 +1156,18 @@ QString msgSynthesizedOperatorDescription(const AbstractMetaFunctionCPtr &newFun
 QString msgSynthesizedFunction(const AbstractMetaFunctionCPtr &newFunction,
                                QStringView why)
 {
-    QString result = "Synthesizing: \""_L1 + newFunction->classQualifiedSignature() + u'"';
+    QString result = "Synthesizing: \u""_s + newFunction->classQualifiedSignature() + u'"';
     if (QString opDescr = msgSynthesizedOperatorDescription(newFunction); !opDescr.isEmpty())
         result += u' ' + opDescr;
     if (!why.isEmpty())
-        result += " ("_L1 + why + u')';
+        result += u" ("_s + why + u')';
     return result;
 }
 
 QString msgSynthesizedFunction(const AbstractMetaFunctionCPtr &newFunction,
                                const FunctionModelItem &oldFunction)
 {
-    const QString why = "from: \""_L1 + oldFunction->classQualifiedSignature() + u'"';
+    const QString why = "from: \u""_s + oldFunction->classQualifiedSignature() + u'"';
     return msgSynthesizedFunction(newFunction, why);
 }
 
