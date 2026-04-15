@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
 
 #include "typesystemparser_p.h"
+#include "smartpointertypeentry.h"
 #include "anystringview_helpers.h"
 #include "addedfunction.h"
 #include "codesnip.h"
@@ -16,7 +17,6 @@
 #include "namespacetypeentry.h"
 #include "objecttypeentry.h"
 #include "primitivetypeentry.h"
-#include "smartpointertypeentry.h"
 #include "typedefentry.h"
 #include "typesystemtypeentry.h"
 #include "valuetypeentry.h"
