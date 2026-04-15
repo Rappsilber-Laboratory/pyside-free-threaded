@@ -49,6 +49,22 @@ jobs:
         with:
           version: '6.8.1'
 
+      - name: Setup Virtual Environment
+        run: |
+          python3.13 -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip setuptools wheel build packaging
+          python -m pip install -r requirements.txt
+          python -m pip install -r requirements-coin.txt
+
+      - name: Verify Environment
+        run: |
+          source venv/bin/activate
+          python --version
+          which python
+          python -c "import sys; print(f'GIL enabled: {sys._is_gil_enabled()}')"
+          python -c "import sysconfig; print(f'Include dir: {sysconfig.get_config_var(\'INCLUDEPY\')}')"
+
       - name: Build PySide6
         env:
           MACOSX_DEPLOYMENT_TARGET: "11.0"
@@ -58,11 +74,7 @@ jobs:
           EXTRA_CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           PYSIDE_UNITY_BUILD: "OFF"
         run: |
-          python3.13 -m venv venv
           source venv/bin/activate
-          python -m pip install --upgrade pip setuptools wheel build packaging
-          python -m pip install -r requirements.txt
-          python -m pip install -r requirements-coin.txt
           
           # Build shiboken6_generator first or rely on standalone build
           # We use --no-unity to avoid complex template deduction errors in unity builds
@@ -72,7 +84,7 @@ jobs:
             --limited-api=no \
             --macos-arch=arm64 \
             --no-unity \
-            --cmake-option="-DPython_EXECUTABLE=$(which python)" \
+            --cmake-options="-DPython_EXECUTABLE=$(which python)" \
             --log-level=verbose
 
       - name: Create Wheels

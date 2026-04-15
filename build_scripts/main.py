@@ -322,6 +322,7 @@ class PysideBuild(_build, CommandMixin, BuildInfoCollectorMixin):
         _build.initialize_options(self)
         self.make_path = None
         self.make_generator = None
+        self.cmake_options = None
         self.script_dir = None
         self.sources_dir = None
         self.build_dir = None
@@ -619,6 +620,8 @@ class PysideBuild(_build, CommandMixin, BuildInfoCollectorMixin):
             f"-DCMAKE_RULE_MESSAGES={cmake_rule_messages}",
             str(module_src_dir)
         ]
+        if self.cmake_options:
+            cmake_cmd.extend(self.cmake_options.split())
 
         # When cross-compiling we set Python_ROOT_DIR to tell
         # FindPython.cmake where to pick up the device python libs.

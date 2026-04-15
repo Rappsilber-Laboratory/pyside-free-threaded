@@ -217,6 +217,7 @@ class CommandMixin:
         ('qt-target-path=', None,
          'Path to device Qt installation (use Qt libs when cross-compiling)'),
         ('cmake=', None, 'Path to CMake'),
+        ('cmake-options=', None, 'Extra CMake options'),
         ('openssl=', None, 'Path to OpenSSL libraries'),
 
         # FIXME: Deprecated in favor of shiboken-target-path
