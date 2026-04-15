@@ -42,7 +42,6 @@ enum class Architecture : std::uint8_t {
 class Triplet
 {
 public:
-    Q_DECLARE_EQUALITY_COMPARABLE(Triplet)
 
     Triplet();
 
@@ -73,9 +72,12 @@ public:
     static Triplet fromHost(bool detectVersion);
     static std::optional<Triplet> fromString(QStringView name);
 
-private:
     friend bool comparesEqual(const Triplet &lhs, const Triplet &rhs) noexcept
     {  return lhs.equals(rhs); }
+
+    Q_DECLARE_EQUALITY_COMPARABLE(Triplet)
+
+private:
 
     bool equals(const Triplet &rhs) const noexcept;
 
