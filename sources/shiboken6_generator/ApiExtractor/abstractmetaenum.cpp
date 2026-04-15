@@ -209,7 +209,7 @@ QString AbstractMetaEnum::name() const
 QString AbstractMetaEnum::qualifiedCppName() const
 {
     return enclosingClass()
-        ? (enclosingClass()->qualifiedCppName() + u"::"_s + name()).toString()
+        ? QString(enclosingClass()->qualifiedCppName() + u"::"_s + name())
         : name();
 }
 
