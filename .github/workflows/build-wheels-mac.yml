@@ -58,7 +58,7 @@ jobs:
           EXTRA_CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           PYSIDE_UNITY_BUILD: "OFF"
         run: |
-          python -m venv venv
+          python3.13 -m venv venv
           source venv/bin/activate
           python -m pip install --upgrade pip setuptools wheel build packaging
           python -m pip install -r requirements.txt
@@ -72,6 +72,7 @@ jobs:
             --limited-api=no \
             --macos-arch=arm64 \
             --no-unity \
+            --cmake-option="-DPython_EXECUTABLE=$(which python)" \
             --log-level=verbose
 
       - name: Create Wheels
