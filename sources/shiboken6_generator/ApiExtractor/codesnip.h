@@ -10,6 +10,7 @@
 #include <QtCore/qlist.h>
 #include <QtCore/qhash.h>
 #include <QtCore/qstring.h>
+#include <QtCore/qcompare.h>
 
 #include <variant>
 

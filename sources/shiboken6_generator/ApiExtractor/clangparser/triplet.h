@@ -8,6 +8,7 @@
 
 #include <QtCore/qstring.h>
 #include <QtCore/qstringview.h>
+#include <QtCore/qcompare.h>
 #include <QtCore/qversionnumber.h>
 
 #include <optional>

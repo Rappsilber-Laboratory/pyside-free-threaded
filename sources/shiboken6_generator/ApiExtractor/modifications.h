@@ -11,6 +11,7 @@
 #include <QtCore/qlist.h>
 #include <QtCore/qshareddata.h>
 #include <QtCore/qstring.h>
+#include <QtCore/qcompare.h>
 
 class ArgumentModificationData;
 class CodeSnip;
