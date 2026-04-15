@@ -181,9 +181,9 @@ static inline bool hasFileSnippetAttributes(const QXmlStreamAttributes *attribut
 
 static QRegularExpression snippetPattern(const QString &snippetLabel)
 {
-    const QString pattern = Ru"(^\s*//\s*@snippet\s+)"_s
+    const QString pattern = uR"(^\s*//\s*@snippet\s+)"_s
                             + QRegularExpression::escape(snippetLabel)
-                            + Ru"(\s*$)"_s;
+                            + uR"(\s*$)"_s;
     QRegularExpression result(pattern);
     Q_ASSERT(result.isValid());
     return result;
