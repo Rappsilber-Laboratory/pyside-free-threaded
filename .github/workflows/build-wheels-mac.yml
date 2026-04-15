@@ -44,6 +44,7 @@ jobs:
       - name: Install Qt
         run: |
           brew install qt
+          brew info qt
           echo "Qt6_DIR=$(brew --prefix qt)/lib/cmake/Qt6" >> $GITHUB_ENV
           echo "CMAKE_PREFIX_PATH=$(brew --prefix qt):$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
 
@@ -78,16 +79,8 @@ jobs:
           PYSIDE_UNITY_BUILD: "OFF"
         run: |
           source venv/bin/activate
-          
-          # Build shiboken6_generator first or rely on standalone build
-          # We use --no-unity to avoid complex template deduction errors in unity builds
-          python setup.py build \
-            --parallel=8 \
-            --limited-api=no \
-            --macos-arch=arm64 \
-            --no-unity \
-            --cmake-options="-DPython_EXECUTABLE=$(which python)" \
-            --log-level=verbose
+          # Force API version to avoid 6.11.0 issues
+          python setup.py build --parallel=8 --limited-api=no --macos-arch=arm64 --no-unity --cmake-options="-DPython_EXECUTABLE=$(which python) -DSHIBOKEN_API_VERSION=6.8.0" --log-level=verbose
 
       - name: Create Wheels
         run: |
