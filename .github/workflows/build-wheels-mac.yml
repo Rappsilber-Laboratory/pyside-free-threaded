@@ -51,7 +51,7 @@ jobs:
 
       - name: Setup Virtual Environment
         run: |
-          python3.13 -m venv venv
+          python3.13t -m venv venv
           source venv/bin/activate
           python -m pip install --upgrade pip setuptools wheel build packaging
           python -m pip install -r requirements.txt
@@ -63,7 +63,7 @@ jobs:
           python --version
           which python
           python -c "import sys; print(f'GIL enabled: {sys._is_gil_enabled()}')"
-          python -c "import sysconfig; print(f'Include dir: {sysconfig.get_config_var(\'INCLUDEPY\')}')"
+          python -c "import sysconfig; print('Include dir:', sysconfig.get_config_var('INCLUDEPY'))"
 
       - name: Build PySide6
         env:
