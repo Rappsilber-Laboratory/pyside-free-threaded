@@ -33,10 +33,13 @@ jobs:
       - name: Setup Ninja and LLVM
         run: |
           brew install ninja cmake llvm@16 libxml2 libxslt
-          echo "LLVM_INSTALL_DIR=$(brew --prefix llvm@16)" >> $GITHUB_ENV
+          LLVM_PATH=$(brew --prefix llvm@16)
+          echo "LLVM_INSTALL_DIR=$LLVM_PATH" >> $GITHUB_ENV
+          echo "CC=$LLVM_PATH/bin/clang" >> $GITHUB_ENV
+          echo "CXX=$LLVM_PATH/bin/clang++" >> $GITHUB_ENV
+          echo "$LLVM_PATH/bin" >> $GITHUB_PATH
           # Ensure CMake finds the Homebrew versions of keg-only dependencies
-          # Using system libxml2 and libxslt as they are universal, unlike Homebrew's
-          echo "CMAKE_PREFIX_PATH=$(brew --prefix llvm@16):$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
+          echo "CMAKE_PREFIX_PATH=$LLVM_PATH:$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
@@ -60,7 +63,7 @@ jobs:
 
       - name: Build PySide6
         env:
-          MACOSX_DEPLOYMENT_TARGET: "11.0"
+          MACOSX_DEPLOYMENT_TARGET: "13.0"
           CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           EXTRA_CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
