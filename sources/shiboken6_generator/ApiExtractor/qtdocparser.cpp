@@ -76,7 +76,7 @@ QString QtDocParser::qdocModuleDir(const QString &pythonType)
     static const QHash<QString, QString> packageToModuleDir = getPackageToModuleDir();
 
     const QStringView package = packageFromPythonType(pythonType);
-    const auto it = packageToModuleDir.constFind(package);
+    const auto it = packageToModuleDir.constFind(package.toString());
     if (it == packageToModuleDir.cend()) {
         const QString known = packageToModuleDir.keys().join(", "_L1);
         qCWarning(lcShibokenDoc, "Type from unknown package: \"%s\" (known: %s).",
