@@ -242,6 +242,7 @@ bool TypeEntry::isUniquePointer() const
 {
     if (m_d->m_type != SmartPointerType)
         return false;
+    static_assert(std::is_convertible_v<const SmartPointerTypeEntry *, const TypeEntry *>, "SmartPointerTypeEntry must be a subclass of TypeEntry");
     const auto *ste = static_cast<const SmartPointerTypeEntry *>(this);
     return ste->smartPointerType() == TypeSystem::SmartPointerType::Unique;
 }
