@@ -50,6 +50,8 @@ jobs:
         run: |
           python3.13 -m venv venv
           source venv/bin/activate
+          # Re-sign the venv python to avoid SIGBUS after venv creation
+          codesign --force --deep --sign - venv/bin/python || true
           python -m pip install --upgrade pip setuptools wheel build packaging
           python -m pip install -r requirements.txt
           python -m pip install -r requirements-coin.txt
