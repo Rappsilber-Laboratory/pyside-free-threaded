@@ -136,28 +136,28 @@ def copyfile(src, dst, force=True, _vars=None, force_copy_symlink=False,
     # the directory doesn't exist.
     # TODO: This code can probably be removed when 'python setup.py install' usage is removed.
     link_target_path = src.resolve(strict=False)
-    if link_target_path.parent == src.parent:
-        link_target = Path(link_target_path.name)
-        link_name = Path(src.name)
-        current_directory = Path.cwd()
-        try:
-            target_dir = dst if dst.is_dir() else dst.parent
-            os.chdir(target_dir)
-            if link_name.exists():
-                if (link_name.is_symlink()
-                        and os.readlink(link_name) == str(link_target)):
-                    log.info(f"Symlink already exists\n  {link_name} ->\n  {link_target}")
-                    return dst
-                os.remove(link_name)
-            log.info(f"Symlinking\n  {link_name} ->\n  {link_target} in\n  {target_dir}")
-            os.symlink(link_target, link_name)
-        except OSError:
-            log.error(f"Error creating symlink\n  {link_name} ->\n  {link_target}")
-        finally:
-            os.chdir(current_directory)
-    else:
-        log.error(f"{src} -> {link_target_path}: Can only create symlinks within the same "
-                  "directory")
+    link_name = Path(src.name)
+    try:
+        link_target = os.path.relpath(link_target_path, src.parent)
+    except ValueError:
+        link_target = str(link_target_path)
+
+    current_directory = Path.cwd()
+    try:
+        target_dir = dst if dst.is_dir() else dst.parent
+        os.chdir(target_dir)
+        if link_name.exists():
+            if (link_name.is_symlink()
+                    and os.readlink(link_name) == str(link_target)):
+                log.info(f"Symlink already exists\n  {link_name} ->\n  {link_target}")
+                return dst
+            os.remove(link_name)
+        log.info(f"Symlinking\n  {link_name} ->\n  {link_target} in\n  {target_dir}")
+        os.symlink(link_target, link_name)
+    except OSError:
+        log.error(f"Error creating symlink\n  {link_name} ->\n  {link_target}")
+    finally:
+        os.chdir(current_directory)
 
     return dst
 
