@@ -93,6 +93,11 @@
 
     <value-type name="QHstsPolicy">
         <enum-type name="PolicyFlag" flags="PolicyFlags"/>
+        <modify-function signature="setExpiry(const quint8*,qsizetype)">
+            <modify-argument index="1">
+                <replace-type modified-type="const char*"/>
+            </modify-argument>
+        </modify-function>
     </value-type>
     <value-type name="QHttp1Configuration"/>
     <value-type name="QHttpHeaders" since="6.7">

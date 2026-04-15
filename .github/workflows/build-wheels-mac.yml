@@ -72,6 +72,7 @@ jobs:
       - name: Build PySide6
         env:
           MACOSX_DEPLOYMENT_TARGET: "13.0"
+          SHIBOKEN_API_VERSION: "6.8.0"
           CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           EXTRA_CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
@@ -80,7 +81,7 @@ jobs:
         run: |
           source venv/bin/activate
           # Force API version to avoid 6.11.0 issues
-          python setup.py build --parallel=8 --limited-api=no --macos-arch=arm64 --no-unity --cmake-options="-DPython_EXECUTABLE=$(which python) -DSHIBOKEN_API_VERSION=6.8.0" --log-level=verbose
+          python setup.py build --parallel=8 --limited-api=no --macos-arch=arm64 --no-unity --log-level=verbose
 
       - name: Create Wheels
         run: |

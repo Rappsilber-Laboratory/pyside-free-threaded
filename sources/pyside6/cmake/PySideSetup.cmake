@@ -233,6 +233,9 @@ endif()
 
 # Define supported Qt Version
 set(SUPPORTED_QT_VERSION "${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
+if(DEFINED ENV{SHIBOKEN_API_VERSION})
+    set(SUPPORTED_QT_VERSION $ENV{SHIBOKEN_API_VERSION})
+endif()
 
 
 # uninstall target
