@@ -38,8 +38,8 @@ jobs:
 
       - name: Setup Ninja and LLVM
         run: |
-          brew install ninja cmake llvm
-          echo "LLVM_INSTALL_DIR=$(brew --prefix llvm)" >> $GITHUB_ENV
+          brew install ninja cmake llvm@18 libxml2 libxslt
+          echo "LLVM_INSTALL_DIR=$(brew --prefix llvm@18)" >> $GITHUB_ENV
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
@@ -47,6 +47,8 @@ jobs:
           version: '6.8.1'
 
       - name: Build PySide6
+        env:
+          MACOSX_DEPLOYMENT_TARGET: "11.0"
         run: |
           python -m venv venv
           source venv/bin/activate
