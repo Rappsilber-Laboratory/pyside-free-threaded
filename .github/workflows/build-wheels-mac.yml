@@ -55,6 +55,7 @@ jobs:
           CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           EXTRA_CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           EXTRA_CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
+          PYSIDE_UNITY_BUILD: "OFF"
         run: |
           python -m venv venv
           source venv/bin/activate
