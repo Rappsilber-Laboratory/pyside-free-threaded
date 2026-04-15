@@ -41,7 +41,8 @@ jobs:
           brew install ninja cmake llvm@16 libxml2 libxslt
           echo "LLVM_INSTALL_DIR=$(brew --prefix llvm@16)" >> $GITHUB_ENV
           # Ensure CMake finds the Homebrew versions of keg-only dependencies
-          echo "CMAKE_PREFIX_PATH=$(brew --prefix llvm@16):$(brew --prefix libxml2):$(brew --prefix libxslt):$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
+          # Using system libxml2 and libxslt as they are universal, unlike Homebrew's
+          echo "CMAKE_PREFIX_PATH=$(brew --prefix llvm@16):$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
@@ -69,7 +70,7 @@ jobs:
             --standalone \
             --parallel=8 \
             --limited-api=no \
-            --macos-arch="x86_64;arm64" \
+            --macos-arch=arm64 \
             --no-unity \
             --log-level=verbose
 
