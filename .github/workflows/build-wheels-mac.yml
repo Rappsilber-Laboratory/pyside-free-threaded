@@ -42,13 +42,14 @@ jobs:
           echo "CMAKE_PREFIX_PATH=$LLVM_PATH:$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v3
-        with:
-          version: '6.7.3'
+        run: |
+          brew install qt
+          echo "Qt6_DIR=$(brew --prefix qt)/lib/cmake/Qt6" >> $GITHUB_ENV
+          echo "CMAKE_PREFIX_PATH=$(brew --prefix qt):$CMAKE_PREFIX_PATH" >> $GITHUB_ENV
 
       - name: Find Qt Private Headers
         run: |
-          find ~/work/pyside-free-threaded/Qt -name "Qt6CorePrivateConfig.cmake" || true
+          find $(brew --prefix qt) -name "Qt6CorePrivateConfig.cmake" || true
 
       - name: Setup Virtual Environment
         run: |
