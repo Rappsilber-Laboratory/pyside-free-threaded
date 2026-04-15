@@ -72,7 +72,6 @@ jobs:
           # Build shiboken6_generator first or rely on standalone build
           # We use --no-unity to avoid complex template deduction errors in unity builds
           python setup.py build \
-            --standalone \
             --parallel=8 \
             --limited-api=no \
             --macos-arch=arm64 \
