@@ -1,6 +1,7 @@
 // Copyright (C) 2016 The Qt Company Ltd.
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
 
+#include "smartpointertypeentry.h"
 #include "apiextractor.h"
 #include "apiextractorresult.h"
 #include "abstractmetaargument.h"
@@ -20,7 +21,6 @@
 #include "customconversion.h"
 #include "containertypeentry.h"
 #include "primitivetypeentry.h"
-#include "smartpointertypeentry.h"
 #include "typedefentry.h"
 #include "namespacetypeentry.h"
 #include "typesystemtypeentry.h"

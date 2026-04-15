@@ -1,6 +1,7 @@
 // Copyright (C) 2018 The Qt Company Ltd.
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
 
+#include "smartpointertypeentry.h"
 #include "messages.h"
 #include "abstractmetaenum.h"
 #include "abstractmetafield.h"
@@ -12,7 +13,6 @@
 #include "typedatabase.h"
 #include "functiontypeentry.h"
 #include "enumtypeentry.h"
-#include "smartpointertypeentry.h"
 #include <codemodel.h>
 
 #include "qtcompat.h"

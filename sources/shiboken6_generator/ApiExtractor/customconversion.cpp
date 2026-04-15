@@ -1,11 +1,11 @@
 // Copyright (C) 2022 The Qt Company Ltd.
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
 
+#include "smartpointertypeentry.h"
 #include "customconversion.h"
 #include "containertypeentry.h"
 #include "customtypenentry.h"
 #include "primitivetypeentry.h"
-#include "smartpointertypeentry.h"
 #include "valuetypeentry.h"
 
 #include <QtCore/qdebug.h>
