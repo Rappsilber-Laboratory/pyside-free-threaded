@@ -51,13 +51,15 @@ jobs:
 
       - name: Setup Virtual Environment
         run: |
-          python3.13t -m venv venv
+          python3.13 -m venv venv
           source venv/bin/activate
           python -m pip install --upgrade pip setuptools wheel build packaging
           python -m pip install -r requirements.txt
           python -m pip install -r requirements-coin.txt
 
       - name: Verify Environment
+        env:
+          PYTHON_GIL: "0"
         run: |
           source venv/bin/activate
           python --version
@@ -67,6 +69,7 @@ jobs:
 
       - name: Build PySide6
         env:
+          PYTHON_GIL: "0"
           MACOSX_DEPLOYMENT_TARGET: "11.0"
           CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
