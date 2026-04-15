@@ -50,90 +50,90 @@ using namespace Qt::StringLiterals;
 
 using namespace Qt::StringLiterals;
 
-constexpr auto allowThreadAttribute = "allow-thread"_L1;
-constexpr auto checkFunctionAttribute = "check-function"_L1;
-constexpr auto defaultConstructibleAttribute = "default-constructible"_L1;
-constexpr auto copyableAttribute = "copyable"_L1;
-constexpr auto smartPointerToPythonConversionAttribute = "to-python"_L1;
-constexpr auto movableAttribute = "movable"_L1;
-constexpr auto accessAttribute = "access"_L1;
-constexpr auto actionAttribute = "action"_L1;
-constexpr auto quoteAfterLineAttribute = "quote-after-line"_L1;
-constexpr auto quoteBeforeLineAttribute = "quote-before-line"_L1;
-constexpr auto textAttribute = "text"_L1;
-constexpr auto nameAttribute = "name"_L1;
-constexpr auto sinceAttribute = "since"_L1;
-constexpr auto untilAttribute = "until"_L1;
-constexpr auto defaultSuperclassAttribute = "default-superclass"_L1;
-constexpr auto deleteInMainThreadAttribute = "delete-in-main-thread"_L1;
-constexpr auto deleteInOwnerThreadAttribute = "delete-in-owner-thread"_L1;
-constexpr auto deprecatedAttribute = "deprecated"_L1;
-constexpr auto disableWrapperAttribute = "disable-wrapper"_L1;
-constexpr auto docFileAttribute = "doc-file"_L1;
-constexpr auto exceptionHandlingAttribute = "exception-handling"_L1;
-constexpr auto extensibleAttribute = "extensible"_L1;
-constexpr auto fileNameAttribute = "file-name"_L1;
-constexpr auto fileAttribute = "file"_L1;
-constexpr auto flagsAttribute = "flags"_L1;
-constexpr auto forceAbstractAttribute = "force-abstract"_L1;
-constexpr auto forceIntegerAttribute = "force-integer"_L1;
-constexpr auto formatAttribute = "format"_L1;
-constexpr auto generateUsingAttribute = "generate-using"_L1;
-constexpr auto generateFunctionsAttribute = "generate-functions"_L1;
-constexpr auto classAttribute = "class"_L1;
-constexpr auto generateAttribute = "generate"_L1;
-constexpr auto generateGetSetDefAttribute = "generate-getsetdef"_L1;
-constexpr auto genericClassAttribute = "generic-class"_L1;
-constexpr auto indexAttribute = "index"_L1;
-constexpr auto invalidateAfterUseAttribute = "invalidate-after-use"_L1;
-constexpr auto isNullAttribute = "isNull"_L1;
-constexpr auto locationAttribute = "location"_L1;
-constexpr auto modifiedTypeAttribute = "modified-type"_L1;
-constexpr auto opaqueContainerAttribute = "opaque-containers"_L1;
-constexpr auto operatorBoolAttribute = "operator-bool"_L1;
-constexpr auto parentManagementAttribute = "parent-management"_L1;
-constexpr auto pyiTypeAttribute = "pyi-type"_L1;
-constexpr auto overloadNumberAttribute = "overload-number"_L1;
-constexpr auto ownershipAttribute = "owner"_L1;
-constexpr auto packageAttribute = "package"_L1;
-constexpr auto docPackageAttribute = "doc-package"_L1;
-constexpr auto docModeAttribute = "doc-mode"_L1;
-constexpr auto polymorphicBaseAttribute = "polymorphic-base"_L1;
-constexpr auto positionAttribute = "position"_L1;
-constexpr auto preferredConversionAttribute = "preferred-conversion"_L1;
-constexpr auto preferredTargetLangTypeAttribute = "preferred-target-lang-type"_L1;
-constexpr auto pythonEnumTypeAttribute = "python-type"_L1;
-constexpr auto pythonOverrideAttribute = "python-override"_L1;
-constexpr auto cppEnumTypeAttribute = "cpp-type"_L1;
-constexpr auto qtMetaObjectFunctionsAttribute = "qt-metaobject"_L1;
-constexpr auto qtMetaTypeAttribute = "qt-register-metatype"_L1;
-constexpr auto removeAttribute = "remove"_L1;
-constexpr auto renameAttribute = "rename"_L1;
-constexpr auto readAttribute = "read"_L1;
-constexpr auto targetLangNameAttribute = "target-lang-name"_L1;
-constexpr auto writeAttribute = "write"_L1;
-constexpr auto opaqueContainerFieldAttribute = "opaque-container"_L1;
-constexpr auto replaceAttribute = "replace"_L1;
-constexpr auto toAttribute = "to"_L1;
-constexpr auto signatureAttribute = "signature"_L1;
-constexpr auto snippetAttribute = "snippet"_L1;
-constexpr auto snakeCaseAttribute = "snake-case"_L1;
-constexpr auto staticAttribute = "static"_L1;
-constexpr auto classmethodAttribute = "classmethod"_L1;
-constexpr auto threadAttribute = "thread"_L1;
-constexpr auto sourceAttribute = "source"_L1;
-constexpr auto streamAttribute = "stream"_L1;
-constexpr auto privateAttribute = "private"_L1;
-constexpr auto xPathAttribute = "xpath"_L1;
-constexpr auto virtualSlotAttribute = "virtual-slot"_L1;
-constexpr auto visibleAttribute = "visible"_L1;
-constexpr auto enumIdentifiedByValueAttribute = "identified-by-value"_L1;
-constexpr auto subModuleOfAttribute = "submodule-of"_L1;
+constexpr auto allowThreadAttribute = u"allow-thread"_s;
+constexpr auto checkFunctionAttribute = u"check-function"_s;
+constexpr auto defaultConstructibleAttribute = u"default-constructible"_s;
+constexpr auto copyableAttribute = u"copyable"_s;
+constexpr auto smartPointerToPythonConversionAttribute = u"to-python"_s;
+constexpr auto movableAttribute = u"movable"_s;
+constexpr auto accessAttribute = u"access"_s;
+constexpr auto actionAttribute = u"action"_s;
+constexpr auto quoteAfterLineAttribute = u"quote-after-line"_s;
+constexpr auto quoteBeforeLineAttribute = u"quote-before-line"_s;
+constexpr auto textAttribute = u"text"_s;
+constexpr auto nameAttribute = u"name"_s;
+constexpr auto sinceAttribute = u"since"_s;
+constexpr auto untilAttribute = u"until"_s;
+constexpr auto defaultSuperclassAttribute = u"default-superclass"_s;
+constexpr auto deleteInMainThreadAttribute = u"delete-in-main-thread"_s;
+constexpr auto deleteInOwnerThreadAttribute = u"delete-in-owner-thread"_s;
+constexpr auto deprecatedAttribute = u"deprecated"_s;
+constexpr auto disableWrapperAttribute = u"disable-wrapper"_s;
+constexpr auto docFileAttribute = u"doc-file"_s;
+constexpr auto exceptionHandlingAttribute = u"exception-handling"_s;
+constexpr auto extensibleAttribute = u"extensible"_s;
+constexpr auto fileNameAttribute = u"file-name"_s;
+constexpr auto fileAttribute = u"file"_s;
+constexpr auto flagsAttribute = u"flags"_s;
+constexpr auto forceAbstractAttribute = u"force-abstract"_s;
+constexpr auto forceIntegerAttribute = u"force-integer"_s;
+constexpr auto formatAttribute = u"format"_s;
+constexpr auto generateUsingAttribute = u"generate-using"_s;
+constexpr auto generateFunctionsAttribute = u"generate-functions"_s;
+constexpr auto classAttribute = u"class"_s;
+constexpr auto generateAttribute = u"generate"_s;
+constexpr auto generateGetSetDefAttribute = u"generate-getsetdef"_s;
+constexpr auto genericClassAttribute = u"generic-class"_s;
+constexpr auto indexAttribute = u"index"_s;
+constexpr auto invalidateAfterUseAttribute = u"invalidate-after-use"_s;
+constexpr auto isNullAttribute = u"isNull"_s;
+constexpr auto locationAttribute = u"location"_s;
+constexpr auto modifiedTypeAttribute = u"modified-type"_s;
+constexpr auto opaqueContainerAttribute = u"opaque-containers"_s;
+constexpr auto operatorBoolAttribute = u"operator-bool"_s;
+constexpr auto parentManagementAttribute = u"parent-management"_s;
+constexpr auto pyiTypeAttribute = u"pyi-type"_s;
+constexpr auto overloadNumberAttribute = u"overload-number"_s;
+constexpr auto ownershipAttribute = u"owner"_s;
+constexpr auto packageAttribute = u"package"_s;
+constexpr auto docPackageAttribute = u"doc-package"_s;
+constexpr auto docModeAttribute = u"doc-mode"_s;
+constexpr auto polymorphicBaseAttribute = u"polymorphic-base"_s;
+constexpr auto positionAttribute = u"position"_s;
+constexpr auto preferredConversionAttribute = u"preferred-conversion"_s;
+constexpr auto preferredTargetLangTypeAttribute = u"preferred-target-lang-type"_s;
+constexpr auto pythonEnumTypeAttribute = u"python-type"_s;
+constexpr auto pythonOverrideAttribute = u"python-override"_s;
+constexpr auto cppEnumTypeAttribute = u"cpp-type"_s;
+constexpr auto qtMetaObjectFunctionsAttribute = u"qt-metaobject"_s;
+constexpr auto qtMetaTypeAttribute = u"qt-register-metatype"_s;
+constexpr auto removeAttribute = u"remove"_s;
+constexpr auto renameAttribute = u"rename"_s;
+constexpr auto readAttribute = u"read"_s;
+constexpr auto targetLangNameAttribute = u"target-lang-name"_s;
+constexpr auto writeAttribute = u"write"_s;
+constexpr auto opaqueContainerFieldAttribute = u"opaque-container"_s;
+constexpr auto replaceAttribute = u"replace"_s;
+constexpr auto toAttribute = u"to"_s;
+constexpr auto signatureAttribute = u"signature"_s;
+constexpr auto snippetAttribute = u"snippet"_s;
+constexpr auto snakeCaseAttribute = u"snake-case"_s;
+constexpr auto staticAttribute = u"static"_s;
+constexpr auto classmethodAttribute = u"classmethod"_s;
+constexpr auto threadAttribute = u"thread"_s;
+constexpr auto sourceAttribute = u"source"_s;
+constexpr auto streamAttribute = u"stream"_s;
+constexpr auto privateAttribute = u"private"_s;
+constexpr auto xPathAttribute = u"xpath"_s;
+constexpr auto virtualSlotAttribute = u"virtual-slot"_s;
+constexpr auto visibleAttribute = u"visible"_s;
+constexpr auto enumIdentifiedByValueAttribute = u"identified-by-value"_s;
+constexpr auto subModuleOfAttribute = u"submodule-of"_s;
 
-constexpr auto noAttributeValue = "no"_L1;
-constexpr auto yesAttributeValue = "yes"_L1;
-constexpr auto trueAttributeValue = "true"_L1;
-constexpr auto falseAttributeValue = "false"_L1;
+constexpr auto noAttributeValue = u"no"_s;
+constexpr auto yesAttributeValue = u"yes"_s;
+constexpr auto trueAttributeValue = u"true"_s;
+constexpr auto falseAttributeValue = u"false"_s;
 
 static bool isTypeEntry(StackElement el)
 {
@@ -163,7 +163,7 @@ static bool setRejectionRegularExpression(const QString &patternIn,
     if (patternIn.startsWith(u'^') && patternIn.endsWith(u'$'))
         pattern = patternIn;
     else if (patternIn == u"*")
-        pattern = "^.*$"_L1;
+        pattern = u"^.*$"_s;
     else
         pattern = u'^' + QRegularExpression::escape(patternIn) + u'$';
     re->setPattern(pattern);
@@ -181,9 +181,9 @@ static inline bool hasFileSnippetAttributes(const QXmlStreamAttributes *attribut
 
 static QRegularExpression snippetPattern(const QString &snippetLabel)
 {
-    const QString pattern = R"(^\s*//\s*@snippet\s+)"_L1
+    const QString pattern = Ru"(^\s*//\s*@snippet\s+)"_s
                             + QRegularExpression::escape(snippetLabel)
-                            + R"(\s*$)"_L1;
+                            + Ru"(\s*$)"_s;
     QRegularExpression result(pattern);
     Q_ASSERT(result.isValid());
     return result;
@@ -1193,9 +1193,9 @@ bool TypeSystemParser::importFileElement(const QXmlStreamAttributes &atts)
         }
     }
     if (!foundFromOk || !foundToOk) {
-        QString fromError = "Could not find quote-after-line='%1' in file '%2'."_L1
+        QString fromError = u"Could not find quote-after-line='%1' in file '%2'."_s
                             .arg(quoteFrom.toString(), fileName);
-        QString toError = "Could not find quote-before-line='%1' in file '%2'."_L1
+        QString toError = u"Could not find quote-before-line='%1' in file '%2'."_s
                           .arg(quoteTo.toString(), fileName);
 
         if (!foundToOk)
@@ -1256,7 +1256,7 @@ static bool shouldDropTypeEntry(const TypeDatabase *db,
 static QString checkSignatureError(const QString& signature, const QString& tag)
 {
     QString funcName = signature.left(signature.indexOf(u'(')).trimmed();
-    static const QRegularExpression whiteSpace("\\s"_L1);
+    static const QRegularExpression whiteSpace(u"\\s"_s);
     Q_ASSERT(whiteSpace.isValid());
     if (!funcName.startsWith(u"operator ") && funcName.contains(whiteSpace)) {
         return QString::fromLatin1("Error in <%1> tag signature attribute '%2'.\n"
@@ -1825,7 +1825,7 @@ FunctionTypeEntryPtr
     }
 
     if (existingType->type() != TypeEntry::FunctionType) {
-        m_error = name + " expected to be a function, but isn't! Maybe it was already declared as a class or something else."_L1;
+        m_error = name + u" expected to be a function, but isn't! Maybe it was already declared as a class or something else."_s;
         return nullptr;
     }
 
@@ -2159,12 +2159,12 @@ bool TypeSystemParser::parseInjectDocumentation(const ConditionalStreamReader &,
     }
 
     if (emphasis != DocumentationEmphasis::None && mode == TypeSystem::DocModificationXPathReplace) {
-        m_error = "Emphasis is not supported for XPathReplace"_L1;
+        m_error = u"Emphasis is not supported for XPathReplace"_s;
         return false;
     }
 
     if (target == DocumentationTarget::DocString && mode != TypeSystem::DocModificationReplace) {
-        m_error = "Doc strings only support \"replace\""_L1;
+        m_error = u"Doc strings only support \"replace\""_s;
         return false;
     }
 
@@ -2269,9 +2269,9 @@ TypeSystemTypeEntryPtr TypeSystemParser::parseRootElement(const ConditionalStrea
             }
         } else if (name == subModuleOfAttribute) {
             subModuleOf = attributes->takeAt(i).value().toString();
-        } else if (name == "namespace-begin"_L1) {
+        } else if (name == u"namespace-begin"_s) {
             namespaceBegin = attributes->takeAt(i).value().toString();
-        } else if (name == "namespace-end"_L1) {
+        } else if (name == u"namespace-end"_s) {
             namespaceEnd = attributes->takeAt(i).value().toString();
         }
     }
@@ -2279,7 +2279,7 @@ TypeSystemTypeEntryPtr TypeSystemParser::parseRootElement(const ConditionalStrea
     if (m_defaultPackage.isEmpty()) { // Extending default, see addBuiltInContainerTypes()
         auto moduleEntry = std::const_pointer_cast<TypeSystemTypeEntry>(m_context->db->defaultTypeSystemType());
         if (!moduleEntry) {
-            m_error = "No type system entry found (\"package\" attribute missing?)."_L1;
+            m_error = u"No type system entry found (\"package\" attribute missing?)."_s;
             return {};
         }
         m_defaultPackage = moduleEntry->name();
@@ -2515,7 +2515,7 @@ static bool parseIndex(const QString &index, int *result, QString *errorMessage)
     bool ok = false;
     *result = index.toInt(&ok);
     if (!ok)
-        *errorMessage = "Cannot convert '%1' to integer"_L1.arg(index);
+        *errorMessage = u"Cannot convert '%1' to integer"_s.arg(index);
     return ok;
 }
 
@@ -2631,7 +2631,7 @@ bool TypeSystemParser::parseDefineOwnership(const ConditionalStreamReader &,
     }
 
     if (!ownershipOpt.has_value()) {
-        m_error = "unspecified ownership"_L1;
+        m_error = u"unspecified ownership"_s;
         return false;
     }
     auto &lastArgMod = m_contextStack.top()->functionMods.last().argument_mods().last();
@@ -2727,7 +2727,7 @@ bool TypeSystemParser::parseAddFunction(const ConditionalStreamReader &,
         || topElement == StackElement::Root
         || topElement ==  StackElement::ContainerTypeEntry;
     if (!validParent) {
-        m_error = "Add/Declare function requires a complex/container type or a root tag as parent, was=%1"_L1
+        m_error = u"Add/Declare function requires a complex/container type or a root tag as parent, was=%1"_s
                   + tagFromElement(topElement);
         return false;
     }
@@ -2859,7 +2859,7 @@ bool TypeSystemParser::parseProperty(const ConditionalStreamReader &, StackEleme
                                      QXmlStreamAttributes *attributes)
 {
     if (!isComplexTypeEntry(topElement)) {
-        m_error = "Add property requires a complex type as parent, was=%1"_L1
+        m_error = u"Add property requires a complex type as parent, was=%1"_s
                   + tagFromElement(topElement);
         return false;
     }
@@ -2958,7 +2958,7 @@ bool TypeSystemParser::parseModifyFunction(const ConditionalStreamReader &reader
         || topElement == StackElement::TypedefTypeEntry
         || topElement == StackElement::FunctionTypeEntry;
     if (!validParent) {
-        m_error = "Modify function requires complex type as parent, was=%1"_L1
+        m_error = u"Modify function requires complex type as parent, was=%1"_s
                   + tagFromElement(topElement);
         return false;
     }
@@ -3150,7 +3150,7 @@ std::optional<TypeSystemParser::Snippet>
         }
     }
     if (result.fileName.isEmpty()) {
-        m_error = "Snippet missing file name"_L1;
+        m_error = u"Snippet missing file name"_s;
         return std::nullopt;
     }
     const QString resolved = m_context->db->modifiedTypesystemFilepath(result.fileName,

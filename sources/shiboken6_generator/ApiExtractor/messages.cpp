@@ -56,7 +56,7 @@ QString msgModificationCandidates(const AbstractMetaFunctionCPtr &function)
     const auto &signatures = function->modificationSignatures();
     for (qsizetype i = 0, size = signatures.size(); i < size; ++i) {
         if (i > 0)
-            result += " / "_L1;
+            result += u" / "_s;
         result += u'"' + signatures.at(i) + u'"';
     }
     if (auto klazz = function->implementingClass())
@@ -649,7 +649,7 @@ static QString functionDescription(const AbstractMetaFunction *function)
 {
     QString result(1, u'"');
     if (function->isDeprecated())
-        result += "[[deprecated]] "_L1;
+        result += u"[[deprecated]] "_s;
     result += function->classQualifiedSignature() + u'"';
     if (function->flags().testFlag(InternalFunctionFlag::HiddenFriend))
         result += u" (hidden friend)"_s;
@@ -681,7 +681,7 @@ QString msgCannotFindDocumentation(const QString &fileName,
 {
     QString name = e.name();
     if (metaClass != nullptr)
-        name.prepend(metaClass->name() + "::"_L1);
+        name.prepend(metaClass->name() + u"::"_s);
     return msgCannotFindDocumentation(fileName, "enum", name, query);
 }
 
@@ -692,7 +692,7 @@ QString msgCannotFindDocumentation(const QString &fileName,
 {
     QString name = f.name();
     if (metaClass != nullptr)
-        name.prepend(metaClass->name() + "::"_L1);
+        name.prepend(metaClass->name() + u"::"_s);
     return msgCannotFindDocumentation(fileName, "field", name, query);
 }
 
@@ -721,13 +721,13 @@ QString msgXpathDocModificationError(const DocModificationList& mods,
 
 QString msgCannotOpenForReading(const QFile &f)
 {
-    return "Failed to open file '%1' for reading: %2"_L1
+    return u"Failed to open file '%1' for reading: %2"_s
            .arg(QDir::toNativeSeparators(f.fileName()), f.errorString());
 }
 
 QString msgCannotOpenForWriting(const QFile &f)
 {
-    return "Failed to open file '%1' for writing: %2"_L1
+    return u"Failed to open file '%1' for writing: %2"_s
            .arg(QDir::toNativeSeparators(f.fileName()), f.errorString());
 }
 
@@ -1039,10 +1039,10 @@ QString msgCannotFindImage(const QString &href, const QString &context,
                            const QStringList &candidates)
 {
     QString result = u"Cannot resolve image "_s + href + u" for "_s + context
-                     + " (tried "_L1;
+                     + u" (tried "_s;
     for (const auto &candidate : candidates)
         result += QDir::toNativeSeparators(candidate) + u' ';
-    result += ")."_L1;
+    result += u")."_s;
     return result;
 }
 
@@ -1075,7 +1075,7 @@ QString msgCannotFindQDocFile(const AbstractMetaClassCPtr &metaClass,
         << (metaClass->isNamespace() ? "namespace" : "class") << " \""
         << metaClass->typeEntry()->qualifiedCppName() << "\" ("
         << QDir::toNativeSeparators(metaClass->typeEntry()->include().name())
-        << "), tried: " << nativeCandidates.join(", "_L1);
+        << "), tried: " << nativeCandidates.join(u", "_s);
     return result;
 }
 
@@ -1099,16 +1099,16 @@ QString msgCannotCall(const AbstractMetaFunctionCPtr &func,
 QString msgRemoveRedundantOverload(const AbstractMetaFunctionCPtr &func,
                                    const QString &type)
 {
-    return "Removing \u""_s + func->classQualifiedSignature()
-           + "\" due to presence of an overload taking a \""_L1
-           + type + "\" parameter."_L1;
+    return u"Removing \""_s + func->classQualifiedSignature()
+           + u"\" due to presence of an overload taking a \""_s
+           + type + u"\" parameter."_s;
 }
 
 QString msgCommandLineArguments(const QStringList &argv)
 {
     QString result = u"Host platform: "_s + QLatin1StringView(QLibraryInfo::build())
                      + u"\nHost OS      : "_s + QSysInfo::prettyProductName()
-                     + "\nCommand line:\n   "_L1;
+                     + u"\nCommand line:\n   "_s;
     for (const QString &arg : argv) {
         result.append(u' ');
         const bool quote = arg.contains(u' ');
@@ -1156,7 +1156,7 @@ QString msgSynthesizedOperatorDescription(const AbstractMetaFunctionCPtr &newFun
 QString msgSynthesizedFunction(const AbstractMetaFunctionCPtr &newFunction,
                                QStringView why)
 {
-    QString result = "Synthesizing: \u""_s + newFunction->classQualifiedSignature() + u'"';
+    QString result = u"Synthesizing: \""_s + newFunction->classQualifiedSignature() + u'"';
     if (QString opDescr = msgSynthesizedOperatorDescription(newFunction); !opDescr.isEmpty())
         result += u' ' + opDescr;
     if (!why.isEmpty())
@@ -1167,13 +1167,13 @@ QString msgSynthesizedFunction(const AbstractMetaFunctionCPtr &newFunction,
 QString msgSynthesizedFunction(const AbstractMetaFunctionCPtr &newFunction,
                                const FunctionModelItem &oldFunction)
 {
-    const QString why = "from: \u""_s + oldFunction->classQualifiedSignature() + u'"';
+    const QString why = u"from: \""_s + oldFunction->classQualifiedSignature() + u'"';
     return msgSynthesizedFunction(newFunction, why);
 }
 
 QString msgOwnerThreadForNonQObject(const AbstractMetaClassCPtr &metaClass)
 {
-    return "shiboken: delete-in-owner-thread specified for non-QObject class \""_L1
+    return u"shiboken: delete-in-owner-thread specified for non-QObject class \""_s
            + metaClass->name() + u'"';
 }
 
