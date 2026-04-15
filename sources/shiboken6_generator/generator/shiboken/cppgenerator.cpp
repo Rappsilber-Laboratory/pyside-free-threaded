@@ -2864,7 +2864,7 @@ void CppGenerator::writeTypeCheck(TextStream &s, const AbstractMetaType &argType
 static void checkTypeViability(const AbstractMetaFunctionCPtr &func,
                                const AbstractMetaType &type, int argIdx)
 {
-    if (!TypeDatabase::checkApiVersion(ShibokenGenerator::packageName(), { QVersionNumber(6, 11, 0), QVersionNumber(9999, 9999) }))
+    if (!TypeDatabase::checkApiVersion(TypeDatabase::instance()->defaultPackageName(), { QVersionNumber(6, 11, 0), QVersionNumber(9999, 9999) }))
         return;
     const bool modified = argIdx == 0
         ? func->isTypeModified()

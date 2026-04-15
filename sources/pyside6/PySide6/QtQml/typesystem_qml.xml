@@ -161,24 +161,6 @@
         <enum-type name="ErrorType"/>
         <enum-type name="SpecialValue"/>
         <enum-type name="ObjectConversionBehavior" since="6.1"/>
-        <modify-function signature="toBoolean(bool*)const">
-            <modify-argument index="1"><out-type/></modify-argument>
-        </modify-function>
-        <modify-function signature="toString(bool*)const">
-            <modify-argument index="1"><out-type/></modify-argument>
-        </modify-function>
-        <modify-function signature="toNumber(bool*)const">
-            <modify-argument index="1"><out-type/></modify-argument>
-        </modify-function>
-        <modify-function signature="lround(bool*)const">
-            <modify-argument index="1"><out-type/></modify-argument>
-        </modify-function>
-        <modify-function signature="toInt(bool*)const">
-            <modify-argument index="1"><out-type/></modify-argument>
-        </modify-function>
-        <modify-function signature="toUInt(bool*)const">
-            <modify-argument index="1"><out-type/></modify-argument>
-        </modify-function>
     </value-type>
     <object-type name="QJSValueIterator"/>
     <object-type name="QQmlAbstractUrlInterceptor">

@@ -378,9 +378,6 @@
           <modify-argument index="1">
               <replace-type modified-type="const char*"/>
           </modify-argument>
-          <modify-argument index="3">
-              <out-type/>
-          </modify-argument>
       </modify-function>
   </value-type>
   <value-type name="QCborArray"/>
@@ -1601,11 +1598,6 @@
     <add-function signature="__setitem__">
         <inject-code class="target" position="beginning" file="../glue/qtcore.cpp" snippet="qbitarray-setitem"/>
     </add-function>
-    <modify-function signature="toUInt32(QSysInfo::Endian,bool*)const">
-        <modify-argument index="2">
-            <out-type/>
-        </modify-argument>
-    </modify-function>
   </value-type>
   <object-type name="QLockFile">
       <enum-type name="LockError"/>
@@ -2357,11 +2349,6 @@
     <modify-function signature="processEvents(QFlags&lt;QEventLoop::ProcessEventsFlag>)" allow-thread="yes"/>
     <!-- Qt5: had to add this recursive object def. This was crucial to get rid of "pure virtual" -->
     <value-type name="TimerInfo"/>
-    <modify-function signature="filterNativeEvent(const QByteArray&amp;,void*,qintptr*)">
-        <modify-argument index="3">
-            <out-type/>
-        </modify-argument>
-    </modify-function>
   </object-type>
 
   <object-type name="QAbstractNativeEventFilter">
@@ -3093,11 +3080,7 @@
     <!-- Removed because it expect QString to be mutable -->
     <modify-function signature="QTextStream(QString*,QFlags&lt;QIODeviceBase::OpenModeFlag&gt;)" remove="all"/>
     <!-- Qt5.5: Removed because it expect QString to be mutable -->
-    <modify-function signature="readLineInto(QString*,qint64)">
-      <modify-argument index="1">
-        <out-type/>
-      </modify-argument>
-    </modify-function>
+    <modify-function signature="readLineInto(QString*,qint64)"/>
     <!-- Removed because we use the non-const version -->
     <modify-function signature="QTextStream(const QByteArray&amp;,QFlags&lt;QIODeviceBase::OpenModeFlag&gt;)" remove="all"/>
 
