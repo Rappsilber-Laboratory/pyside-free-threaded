@@ -33,9 +33,9 @@ public:
     }
 
 private:
-    Q_DECLARE_EQUALITY_COMPARABLE(TemplateInstance)
-
     friend bool comparesEqual(const TemplateInstance &lhs, const TemplateInstance &rhs) noexcept;
+
+    Q_DECLARE_EQUALITY_COMPARABLE(TemplateInstance)
     friend size_t qHash(const TemplateInstance &t, size_t seed = 0) noexcept
     { return qHashMulti(seed, t.m_name, t.replaceRules); }
 
@@ -94,9 +94,9 @@ public:
     TypeSystem::Language language = TypeSystem::TargetLangCode;
     TypeSystem::CodeSnipPosition position = TypeSystem::CodeSnipPositionAny;
 
-    Q_DECLARE_EQUALITY_COMPARABLE(CodeSnip)
-
     friend bool comparesEqual(const CodeSnip &lhs, const CodeSnip &rhs) noexcept;
+
+    Q_DECLARE_EQUALITY_COMPARABLE(CodeSnip)
     friend size_t qHash(const CodeSnip &s, size_t seed = 0) noexcept
     { return qHashMulti(seed, s.position, s.language, s.codeList()); }
 };
