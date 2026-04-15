@@ -1,0 +1,75 @@
+name: Build macOS Wheels
+
+on:
+  push:
+    branches:
+      - feature/free-threaded
+  pull_request:
+    branches:
+      - feature/free-threaded
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build wheels on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14]
+        python-version: ["3.13"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          python-feature: 'free-threaded'
+          allow-prereleases: true
+
+      - name: Verify Free-Threaded
+        run: |
+          python -c "import sys; print(f'GIL enabled: {sys._is_gil_enabled()}')"
+
+      - name: Setup Ninja and LLVM
+        run: |
+          brew install ninja cmake llvm
+          echo "LLVM_INSTALL_DIR=$(brew --prefix llvm)" >> $GITHUB_ENV
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.8.1'
+
+      - name: Build PySide6
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip setuptools wheel build packaging
+          python -m pip install -r requirements.txt
+          python -m pip install -r requirements-coin.txt
+          
+          # Build with cross-compilation for universal2 wheels
+          python setup.py build \
+            --standalone \
+            --parallel=8 \
+            --no-examples \
+            --limited-api=no \
+            --macos-arch="x86_64;arm64" \
+            --log-level=verbose
+
+      - name: Create Wheels
+        run: |
+          source venv/bin/activate
+          python create_wheels.py
+
+      - name: Upload Wheels
+        uses: actions/upload-artifact@v4
+        with:
+          name: pyside6-wheels-macos-3.13-ft
+          path: dist/*.whl
