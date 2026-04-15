@@ -14,8 +14,10 @@
 <modify-function signature="^glTextureParameterI?u?[fi]v\(.*$">
     <modify-argument index="3"><array/></modify-argument>
 </modify-function>
+<!-- Commented out to fix macOS build failures
 <modify-function signature="^glVertexArrayVertexBuffers\(.*$">
     <modify-argument index="4"><array/></modify-argument>
     <modify-argument index="5"><array/></modify-argument>
     <modify-argument index="6"><array/></modify-argument>
 </modify-function>
+-->
