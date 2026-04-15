@@ -46,6 +46,10 @@ jobs:
         with:
           version: '6.8.1'
 
+      - name: Find Qt Private Headers
+        run: |
+          find ~/work/pyside-free-threaded/Qt -name "Qt6CorePrivateConfig.cmake" || true
+
       - name: Setup Virtual Environment
         run: |
           python3.13 -m venv venv
