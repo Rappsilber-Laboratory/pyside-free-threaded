@@ -310,7 +310,7 @@ QMetaPropertyBuilder
         if (qstrncmp(PepType_GetFullyQualifiedNameStr(pyTypeObject), "PySide", 6) != 0
             && PySide::isQObjectDerived(pyTypeObject, false)) {
             const QByteArray pyType(PepType_GetFullyQualifiedNameStr(pyTypeObject));
-            const auto metaType = QMetaType::fromName(pyType + '*');
+            const auto metaType = QMetaType::fromName((pyType + '*').toByteArray());
             if (metaType.isValid()) {
                 return builder->addProperty(propertyName, pyType,
                                             metaType, propertyNotifyId);
@@ -633,7 +633,7 @@ void MetaObjectBuilderPrivate::parsePythonType(PyTypeObject *type)
                     data->signalName = String::toCString(key);
                 for (const auto &s : data->signatures) {
                     const auto sig = data->signalName + '(' + s.signature + ')';
-                    if (m_baseObject->indexOfSignal(sig) == -1) {
+                    if (m_baseObject->indexOfSignal(sig.toByteArray().constData()) == -1) {
                         // Registering the parameterNames to the QMetaObject (PYSIDE-634)
                         // from:
                         //     Signal(..., arguments=['...', ...]
