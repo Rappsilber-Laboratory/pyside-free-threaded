@@ -133,7 +133,20 @@
   <object-type name="QAccessibleObject" qt-register-metatype="base"/>
   <object-type name="QAccessibleSelectionInterface" since="6.7"/>
   <object-type name="QAccessibleTableCellInterface"/>
-  <object-type name="QAccessibleTextInterface"/>
+  <object-type name="QAccessibleTextInterface">
+    <modify-function signature="textAfterOffset(int,QAccessible::TextBoundaryType,int*,int*)const">
+        <modify-argument index="3"><out-type/></modify-argument>
+        <modify-argument index="4"><out-type/></modify-argument>
+    </modify-function>
+    <modify-function signature="textAtOffset(int,QAccessible::TextBoundaryType,int*,int*)const">
+        <modify-argument index="3"><out-type/></modify-argument>
+        <modify-argument index="4"><out-type/></modify-argument>
+    </modify-function>
+    <modify-function signature="textBeforeOffset(int,QAccessible::TextBoundaryType,int*,int*)const">
+        <modify-argument index="3"><out-type/></modify-argument>
+        <modify-argument index="4"><out-type/></modify-argument>
+    </modify-function>
+  </object-type>
   <object-type name="QAccessibleValueInterface"/>
 
   <object-type name="QAccessibleEvent"
