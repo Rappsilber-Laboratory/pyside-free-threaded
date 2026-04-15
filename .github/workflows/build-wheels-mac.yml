@@ -29,12 +29,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          python-feature: 'free-threaded'
-          allow-prereleases: true
-
-      - name: Verify Free-Threaded
-        run: |
-          python -c "import sys; print(f'GIL enabled: {sys._is_gil_enabled()}')"
 
       - name: Setup Ninja and LLVM
         run: |
@@ -58,18 +52,14 @@ jobs:
           python -m pip install -r requirements-coin.txt
 
       - name: Verify Environment
-        env:
-          PYTHON_GIL: "0"
         run: |
           source venv/bin/activate
           python --version
           which python
-          python -c "import sys; print(f'GIL enabled: {sys._is_gil_enabled()}')"
           python -c "import sysconfig; print('Include dir:', sysconfig.get_config_var('INCLUDEPY'))"
 
       - name: Build PySide6
         env:
-          PYTHON_GIL: "0"
           MACOSX_DEPLOYMENT_TARGET: "11.0"
           CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
