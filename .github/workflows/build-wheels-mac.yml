@@ -70,7 +70,6 @@ jobs:
             --limited-api=no \
             --macos-arch="x86_64;arm64" \
             --no-unity \
-            --cmake-option="-DQT_USE_QSTRINGBUILDER=OFF" \
             --log-level=verbose
 
       - name: Create Wheels

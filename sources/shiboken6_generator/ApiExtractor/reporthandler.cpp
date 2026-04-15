@@ -138,8 +138,8 @@ static QByteArray timeStamp()
 {
     const qint64 elapsed = m_timer.elapsed();
     return elapsed > 5000
-        ? QByteArray::number(elapsed / 1000) + 's'
-        : QByteArray::number(elapsed) + "ms";
+        ? (QByteArray::number(elapsed / 1000) + 's').toByteArray()
+        : (QByteArray::number(elapsed) + "ms").toByteArray();
 }
 
 void ReportHandler::startProgress(const QByteArray& str)

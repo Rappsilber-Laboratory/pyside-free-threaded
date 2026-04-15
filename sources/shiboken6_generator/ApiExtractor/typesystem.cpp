@@ -44,7 +44,7 @@ using namespace Qt::StringLiterals;
 static QString buildName(const QString &entryName, const TypeEntryCPtr &parent)
 {
     return parent == nullptr || parent->type() == TypeEntry::TypeSystemType
-        ? entryName : parent->name() + u"::"_s + entryName;
+        ? entryName : (parent->name() + u"::"_s + entryName).toString();
 }
 
 // Access private class as 'd', cf macro Q_D()

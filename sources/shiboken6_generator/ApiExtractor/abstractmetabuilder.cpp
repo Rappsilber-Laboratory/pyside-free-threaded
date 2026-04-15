@@ -1268,8 +1268,8 @@ AbstractMetaClassPtr AbstractMetaBuilderPrivate::traverseClass(const FileModelIt
 
     if (ReportHandler::isDebug(ReportHandler::MediumDebug)) {
         const QString message = type->isContainer()
-            ? u"container: '"_s + fullClassName + u'\''
-            : u"class: '"_s + metaClass->fullName() + u'\'';
+            ? (u"container: '"_s + fullClassName + u'\'').toString()
+            : (u"class: '"_s + metaClass->fullName() + u'\'').toString();
         qCInfo(lcShiboken, "%s", qPrintable(message));
     }
 
@@ -3264,7 +3264,7 @@ AbstractMetaClassPtr
     QString errorMessage;
     scope.removeLast();
     for (auto i = scope.size(); i >= 0; --i) {
-        QString prefix = i > 0 ? QStringList(scope.mid(0, i)).join(u"::"_s) + u"::"_s : QString();
+        QString prefix = i > 0 ? (QStringList(scope.mid(0, i)).join(u"::"_s) + u"::"_s).toString() : QString();
         QString completeName = prefix + name;
         const TypeInfo parsed = TypeParser::parse(completeName, &errorMessage);
         QString qualifiedName = parsed.qualifiedNameString();

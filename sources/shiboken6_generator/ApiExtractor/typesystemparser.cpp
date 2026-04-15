@@ -3590,7 +3590,7 @@ bool TypeSystemParser::startElement(const ConditionalStreamReader &reader, Stack
             }
         } else {
             qCWarning(lcShiboken).noquote().nospace()
-                << u"Type: "_s + name + u" was rejected by typesystem"_s;
+                << (u"Type: "_s + name + u" was rejected by typesystem"_s).toString();
         }
 
     } else if (element == StackElement::InjectDocumentation) {
