@@ -50,7 +50,9 @@ jobs:
         env:
           MACOSX_DEPLOYMENT_TARGET: "11.0"
           CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
+          CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
           EXTRA_CXXFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
+          EXTRA_CFLAGS: "-DQT_NO_CAST_FROM_ASCII -DQT_USE_QSTRINGBUILDER=0"
         run: |
           python -m venv venv
           source venv/bin/activate
@@ -58,12 +60,14 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install -r requirements-coin.txt
           
-          # Build with cross-compilation for universal2 wheels
+          # Build shiboken6_generator first or rely on standalone build
+          # We use --no-unity to avoid complex template deduction errors in unity builds
           python setup.py build \
             --standalone \
             --parallel=8 \
             --limited-api=no \
             --macos-arch="x86_64;arm64" \
+            --no-unity \
             --log-level=verbose
 
       - name: Create Wheels
