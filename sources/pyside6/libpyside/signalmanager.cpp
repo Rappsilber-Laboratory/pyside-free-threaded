@@ -91,9 +91,15 @@ static QByteArray methodSignature(const QMetaMethod &method)
 static QByteArray msgCannotConvertParameter(const QByteArray &parameterTypeName,
                                             const QByteArray &signature, qsizetype p)
 {
-    return "Cannot call meta function \""_ba + signature
-           + "\" because parameter " + QByteArray::number(p) + " of type \""_ba
-           + parameterTypeName + "\" cannot be converted."_ba;
+    QByteArray res = "Cannot call meta function \"";
+    res.append(signature);
+    res.append("\" because parameter ");
+    res.append(QByteArray::number(p));
+    res.append(" of type \"");
+    res.append(parameterTypeName);
+    res.append("\" cannot be converted.");
+    return res;
+
 }
 
 static inline QByteArray msgCannotConvertParameter(QMetaMethod method, qsizetype p)
@@ -104,7 +110,11 @@ static inline QByteArray msgCannotConvertParameter(QMetaMethod method, qsizetype
 
 static QByteArray msgCannotConvertReturn(const QByteArray &signature)
 {
-    return "The return value of \""_ba + signature + "\" cannot be converted."_ba;
+    QByteArray res = "The return value of \"";
+    res.append(signature);
+    res.append("\" cannot be converted.");
+    return res;
+
 }
 
 static inline QByteArray msgCannotConvertReturn(QMetaMethod method)
@@ -605,9 +615,15 @@ static QByteArray signature(const char *name, const QByteArrayList &parameterTyp
                             const char *returnType)
 {
     QByteArray result;
-    if (isNonVoidReturn(returnType))
-        result += QByteArray(returnType) + ' ';
-    result += QByteArray(name) + '(' + parameterTypes.join(", ") + ')';
+    if (isNonVoidReturn(returnType)) {
+        result.append(returnType);
+        result.append(' ');
+    }
+    result.append(name);
+    result.append('(');
+    result.append(parameterTypes.join(", "));
+    result.append(')');
+
     return result;
 }
 

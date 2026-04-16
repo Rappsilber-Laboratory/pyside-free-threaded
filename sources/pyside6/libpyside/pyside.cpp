@@ -1012,13 +1012,18 @@ bool registerInternalQtConf()
 
     // rccData needs to be static, otherwise when it goes out of scope, the Qt resource system
     // will point to invalid memory.
-    static QByteArray rccData = QByteArrayLiteral("[Paths]\nPrefix = ") + prefixPath + "\n";
+    static QByteArray rccData = QByteArrayLiteral("[Paths]\nPrefix = ");
+    rccData.append(prefixPath);
+    rccData.append('\n');
 #ifdef Q_OS_WIN
     // LibraryExecutables needs to point to Prefix instead of ./bin because we don't
     // currently conform to the Qt default directory layout on Windows. This is necessary
     // for QtWebEngineCore to find the location of QtWebEngineProcess.exe.
-    rccData += QByteArrayLiteral("LibraryExecutables = ") + prefixPath + "\n";
+    rccData.append(QByteArrayLiteral("LibraryExecutables = "));
+    rccData.append(prefixPath);
+    rccData.append('\n');
 #endif
+
 
     // The RCC data structure expects a 4-byte size value representing the actual data.
     qsizetype size = rccData.size();

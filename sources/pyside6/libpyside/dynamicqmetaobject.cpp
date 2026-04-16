@@ -287,9 +287,15 @@ static QByteArray msgInvalidPropertyType(const QByteArray &className,
                                          const QByteArray &propertyName,
                                          const QByteArray &propertyType)
 {
-    return "libpyside: QMetaObjectBuilder: Failed to add property \""_ba + propertyName
-           + "\" to \""_ba + className + "\": Invalid property type \""
-           + propertyType + "\"."_ba;
+    QByteArray res = "libpyside: QMetaObjectBuilder: Failed to add property \"";
+    res.append(propertyName);
+    res.append("\" to \"");
+    res.append(className);
+    res.append("\": Invalid property type \"");
+    res.append(propertyType);
+    res.append("\".");
+    return res;
+
 }
 
 QMetaPropertyBuilder
