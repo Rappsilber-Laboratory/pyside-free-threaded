@@ -374,9 +374,9 @@ bool fillQtProperties(PyObject *qObj, const QMetaObject *metaObj,
             } else {
                 const auto methodO = findSignal(metaObj, propName);
                 if (methodO.has_value()) {
-                    const auto signature = "2"_ba + methodO->methodSignature();
+                    const QByteArray signature = "2"_ba + methodO->methodSignature();
                     accept = true;
-                    if (!PySide::Signal::connect(qObj, signature, value))
+                    if (!PySide::Signal::connect(qObj, signature.constData(), value))
                         return false;
                 }
             }
