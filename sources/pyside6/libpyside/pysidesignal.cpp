@@ -1028,7 +1028,8 @@ QByteArray getTypeName(PyObject *obType)
 
 static QByteArray buildSignature(const QByteArray &name, const QByteArray &signature)
 {
-    return QMetaObject::normalizedSignature(name + '(' + signature + ')');
+    const QByteArray fullSig = name + '(' + signature + ')';
+    return QMetaObject::normalizedSignature(fullSig.constData());
 }
 
 static PySideSignalData::Signature parseSignature(PyObject *args)
