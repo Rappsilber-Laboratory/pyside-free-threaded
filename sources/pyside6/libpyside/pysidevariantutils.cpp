@@ -80,7 +80,10 @@ static QVariant convertToValueList(PyObject *list)
     if (!metaType.isValid())
         return {};
 
-    const QByteArray listTypeName = QByteArrayLiteral("QList<") + metaType.name() + '>';
+    QByteArray listTypeName = QByteArrayLiteral("QList<");
+    listTypeName.append(metaType.name());
+    listTypeName.append('>');
+
     metaType = QMetaType::fromName(listTypeName);
     if (!metaType.isValid())
         return {};

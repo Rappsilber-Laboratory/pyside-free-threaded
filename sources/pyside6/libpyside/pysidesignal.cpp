@@ -656,8 +656,12 @@ static PyObject *signalInstanceGetItem(PyObject *self, PyObject *key)
     }
 
     // Build error message with candidates
-    QByteArray message = "Signature \"" + sig + "\" not found for signal: \""
-                         + sigName + "\". Available candidates: ";
+    QByteArray message = "Signature \"";
+    message.append(sig);
+    message.append("\" not found for signal: \"");
+    message.append(sigName);
+    message.append("\". Available candidates: ");
+
     for (auto *data = firstSignal; data != nullptr; data = data->d->next) {
         if (data != firstSignal)
             message += ", ";
@@ -1028,7 +1032,11 @@ QByteArray getTypeName(PyObject *obType)
 
 static QByteArray buildSignature(const QByteArray &name, const QByteArray &signature)
 {
-    const QByteArray fullSig = name + '(' + signature + ')';
+    QByteArray fullSig = name;
+    fullSig.append('(');
+    fullSig.append(signature);
+    fullSig.append(')');
+
     return QMetaObject::normalizedSignature(fullSig.constData());
 }
 

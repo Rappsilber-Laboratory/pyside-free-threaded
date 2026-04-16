@@ -211,7 +211,7 @@ static QByteArrayList parseFields(const char *propStr, int flags, bool *stdWrite
     if (write.isEmpty()) {
         auto snake_flag = flags & 0x01;
         if (snake_flag) {
-            list[2] = ("set_") + name;
+            list[2] = QByteArray("set_") + name;
         } else {
             list[2] = QByteArray("set") + name;
             list[2][3] = std::toupper(list[2][3]);
