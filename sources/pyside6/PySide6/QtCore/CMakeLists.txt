@@ -206,7 +206,12 @@ ${SPECIFIC_OS_FILES}
 ${QtCore_GEN_DIR}/qtcore_module_wrapper.cpp
 )
 
-if(Qt${QT_MAJOR_VERSION}Core_VERSION VERSION_GREATER_EQUAL "6.10.0")
+message(STATUS "Qt${QT_MAJOR_VERSION}Core_VERSION: [${Qt${QT_MAJOR_VERSION}Core_VERSION}]")
+message(STATUS "SUPPORTED_QT_VERSION: [${SUPPORTED_QT_VERSION}]")
+
+
+if(SUPPORTED_QT_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    message(STATUS "SUPPORTED_QT_VERSION is ${SUPPORTED_QT_VERSION}. Adding qrangemodel_wrapper.cpp")
     list(APPEND QtCore_SRC ${QtCore_GEN_DIR}/qrangemodel_wrapper.cpp)
 endif()
 

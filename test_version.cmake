@@ -1,0 +1,6 @@
+set(V "6.8.0")
+if(V VERSION_GREATER_EQUAL "6.10.0")
+    message("Condition TRUE (WRONG!)")
+else()
+    message("Condition FALSE (CORRECT!)")
+endif()
