@@ -2144,6 +2144,21 @@
     <modify-function signature="operator&gt;(QChar)const" remove="all"/>
     <modify-function signature="operator&gt;=(QChar)const" remove="all"/>
 
+    <modify-function signature="operator==(QString)const" remove="all"/>
+    <modify-function signature="operator!=(QString)const" remove="all"/>
+    <modify-function signature="operator&lt;(QString)const" remove="all"/>
+    <modify-function signature="operator&lt;=(QString)const" remove="all"/>
+    <modify-function signature="operator&gt;(QString)const" remove="all"/>
+    <modify-function signature="operator&gt;=(QString)const" remove="all"/>
+
+    <modify-function signature="operator==(QAnyStringView)const" remove="all"/>
+    <modify-function signature="operator!=(QAnyStringView)const" remove="all"/>
+    <modify-function signature="operator&lt;(QAnyStringView)const" remove="all"/>
+    <modify-function signature="operator&lt;=(QAnyStringView)const" remove="all"/>
+    <modify-function signature="operator&gt;(QAnyStringView)const" remove="all"/>
+    <modify-function signature="operator&gt;=(QAnyStringView)const" remove="all"/>
+
+
     <modify-function signature="operator+=(const char*)" remove="all"/>
     <modify-function signature="operator+(QByteArray,const char*)" remove="all"/>
     <modify-function signature="operator+(const char*,QByteArray)" remove="all"/>
