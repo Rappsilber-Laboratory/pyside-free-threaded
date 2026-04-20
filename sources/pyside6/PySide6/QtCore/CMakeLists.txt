@@ -211,12 +211,6 @@ message(WARNING "SUPPORTED_QT_VERSION: [${SUPPORTED_QT_VERSION}]")
 message(WARNING "QtCore_GEN_DIR: [${QtCore_GEN_DIR}]")
 
 
-if(FALSE) # FORCED SKIP: SUPPORTED_QT_VERSION was ${SUPPORTED_QT_VERSION}
-    message(WARNING "SUPPORTED_QT_VERSION is ${SUPPORTED_QT_VERSION}. Adding qrangemodel_wrapper.cpp")
-    list(APPEND QtCore_SRC ${QtCore_GEN_DIR}/qrangemodel_wrapper.cpp)
-endif()
-
-
 get_property(QtCore_disabled_features TARGET Qt${QT_MAJOR_VERSION}::Core
              PROPERTY QT_DISABLED_PUBLIC_FEATURES)
 
