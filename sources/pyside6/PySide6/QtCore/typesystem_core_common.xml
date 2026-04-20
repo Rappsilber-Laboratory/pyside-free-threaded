@@ -1758,6 +1758,7 @@
     <modify-function signature="endResetModel()" allow-thread="yes"/>
   </object-type>
 
+<!--
   <object-type name="QRangeModel" since="6.10">
     <extra-includes>
       <include file-name="QtCore/qspan.h" location="global"/>
@@ -1785,6 +1786,7 @@
         <inject-code file="../glue/qtcore.cpp" snippet="qrangemodel-sequence-constructor"/>
     </add-function>
   </object-type>
+-->
 
   <value-type name="QItemSelection">
     <include file-name="QList" location="global"/>
