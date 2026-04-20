@@ -7,19 +7,6 @@
     <load-typesystem name="templates/common.xml" generate="no"/>
     <load-typesystem name="templates/core_common.xml" generate="no"/>
 
-    <modify-function signature="operator==(QByteArray,QString)" remove="all"/>
-    <modify-function signature="operator!=(QByteArray,QString)" remove="all"/>
-    <modify-function signature="operator&lt;(QByteArray,QString)" remove="all"/>
-    <modify-function signature="operator&lt;=(QByteArray,QString)" remove="all"/>
-    <modify-function signature="operator>(QByteArray,QString)" remove="all"/>
-    <modify-function signature="operator>=(QByteArray,QString)" remove="all"/>
-
-    <modify-function signature="operator==(QString,QByteArray)" remove="all"/>
-    <modify-function signature="operator!=(QString,QByteArray)" remove="all"/>
-    <modify-function signature="operator&lt;(QString,QByteArray)" remove="all"/>
-    <modify-function signature="operator&lt;=(QString,QByteArray)" remove="all"/>
-    <modify-function signature="operator>(QString,QByteArray)" remove="all"/>
-    <modify-function signature="operator>=(QString,QByteArray)" remove="all"/>
 <!--
     <function signature="qChecksum(QByteArrayView data, Qt::ChecksumType)"/>
 -->
@@ -2132,6 +2119,20 @@
     <modify-function signature="operator&lt;(const char*)const" remove="all"/>
     <modify-function signature="operator&lt;=(const char*)const" remove="all"/>
     <modify-function signature="operator!=(const char*)const" remove="all"/>
+
+    <modify-function signature="operator==(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator!=(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator&lt;(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator&lt;=(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator>(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator>=(QByteArray,QString)" remove="all"/>
+
+    <modify-function signature="operator==(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator!=(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator&lt;(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator&lt;=(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator>(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator>=(QString,QByteArray)" remove="all"/>
 
     <modify-function signature="operator==(const QString&amp;)const" remove="all"/>
     <modify-function signature="operator!=(const QString&amp;)const" remove="all"/>
