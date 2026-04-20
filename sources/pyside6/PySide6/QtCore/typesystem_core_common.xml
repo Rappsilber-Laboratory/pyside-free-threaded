@@ -2130,19 +2130,12 @@
     <modify-function signature="operator>(const QString&amp;)const" remove="all"/>
     <modify-function signature="operator>=(const QString&amp;)const" remove="all"/>
 
-
-
-
     <modify-function signature="operator==(const QString &amp;)const" remove="all"/>
     <modify-function signature="operator!=(const QString &amp;)const" remove="all"/>
     <modify-function signature="operator&lt;(const QString &amp;)const" remove="all"/>
     <modify-function signature="operator&lt;=(const QString &amp;)const" remove="all"/>
     <modify-function signature="operator>(const QString &amp;)const" remove="all"/>
     <modify-function signature="operator>=(const QString &amp;)const" remove="all"/>
-
-
-
-
 
     <modify-function signature="operator==(QLatin1String)const" remove="all"/>
     <modify-function signature="operator!=(QLatin1String)const" remove="all"/>
@@ -2151,18 +2144,12 @@
     <modify-function signature="operator>(QLatin1String)const" remove="all"/>
     <modify-function signature="operator>=(QLatin1String)const" remove="all"/>
 
-
-
-
     <modify-function signature="operator==(QLatin1StringView)const" remove="all"/>
     <modify-function signature="operator!=(QLatin1StringView)const" remove="all"/>
     <modify-function signature="operator&lt;(QLatin1StringView)const" remove="all"/>
     <modify-function signature="operator&lt;=(QLatin1StringView)const" remove="all"/>
     <modify-function signature="operator>(QLatin1StringView)const" remove="all"/>
     <modify-function signature="operator>=(QLatin1StringView)const" remove="all"/>
-
-
-
 
     <modify-function signature="operator==(const QLatin1String&amp;)const" remove="all"/>
     <modify-function signature="operator!=(const QLatin1String&amp;)const" remove="all"/>
@@ -2175,15 +2162,13 @@
 
 
 
+
     <modify-function signature="operator==(QChar)const" remove="all"/>
     <modify-function signature="operator!=(QChar)const" remove="all"/>
     <modify-function signature="operator&lt;(QChar)const" remove="all"/>
     <modify-function signature="operator&lt;=(QChar)const" remove="all"/>
     <modify-function signature="operator>(QChar)const" remove="all"/>
     <modify-function signature="operator>=(QChar)const" remove="all"/>
-
-
-
 
     <modify-function signature="operator==(QString)const" remove="all"/>
     <modify-function signature="operator!=(QString)const" remove="all"/>
@@ -2192,9 +2177,6 @@
     <modify-function signature="operator>(QString)const" remove="all"/>
     <modify-function signature="operator>=(QString)const" remove="all"/>
 
-
-
-
     <modify-function signature="operator==(QAnyStringView)const" remove="all"/>
     <modify-function signature="operator!=(QAnyStringView)const" remove="all"/>
     <modify-function signature="operator&lt;(QAnyStringView)const" remove="all"/>
@@ -2202,9 +2184,16 @@
     <modify-function signature="operator>(QAnyStringView)const" remove="all"/>
     <modify-function signature="operator>=(QAnyStringView)const" remove="all"/>
 
+
+    <modify-function signature="operator+(QString)" remove="all"/>
+    <modify-function signature="operator+(const QString&amp;)" remove="all"/>
+    <modify-function signature="operator+(QLatin1String)" remove="all"/>
     <modify-function signature="operator+(QString)const" remove="all"/>
     <modify-function signature="operator+(const QString&amp;)const" remove="all"/>
     <modify-function signature="operator+(QLatin1String)const" remove="all"/>
+    <modify-function signature="operator+(QChar)const" remove="all"/>
+    <modify-function signature="operator+(const QChar&amp;)const" remove="all"/>
+
 
 
 
