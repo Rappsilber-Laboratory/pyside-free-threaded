@@ -2112,65 +2112,65 @@
 
 
 
-    <rejection function-name="operator==" argument-type="QString"/>
-    <rejection function-name="operator==" argument-type="const QString&amp;"/>
-    <rejection function-name="operator!=" argument-type="QString"/>
-    <rejection function-name="operator!=" argument-type="const QString&amp;"/>
-    <rejection function-name="operator&lt;" argument-type="QString"/>
-    <rejection function-name="operator&lt;" argument-type="const QString&amp;"/>
-    <rejection function-name="operator&lt;=" argument-type="QString"/>
-    <rejection function-name="operator&lt;=" argument-type="const QString&amp;"/>
-    <rejection function-name="operator>" argument-type="QString"/>
-    <rejection function-name="operator>" argument-type="const QString&amp;"/>
-    <rejection function-name="operator>=" argument-type="QString"/>
-    <rejection function-name="operator>=" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="const QString&amp;"/>
 
-    <rejection function-name="operator==" argument-type="QChar"/>
-    <rejection function-name="operator==" argument-type="const QChar&amp;"/>
-    <rejection function-name="operator!=" argument-type="QChar"/>
-    <rejection function-name="operator!=" argument-type="const QChar&amp;"/>
-    <rejection function-name="operator&lt;" argument-type="QChar"/>
-    <rejection function-name="operator&lt;" argument-type="const QChar&amp;"/>
-    <rejection function-name="operator&lt;=" argument-type="QChar"/>
-    <rejection function-name="operator&lt;=" argument-type="const QChar&amp;"/>
-    <rejection function-name="operator>" argument-type="QChar"/>
-    <rejection function-name="operator>" argument-type="const QChar&amp;"/>
-    <rejection function-name="operator>=" argument-type="QChar"/>
-    <rejection function-name="operator>=" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="const QChar&amp;"/>
 
-    <rejection function-name="operator==" argument-type="QLatin1String"/>
-    <rejection function-name="operator==" argument-type="const QLatin1String&amp;"/>
-    <rejection function-name="operator!=" argument-type="QLatin1String"/>
-    <rejection function-name="operator!=" argument-type="const QLatin1String&amp;"/>
-    <rejection function-name="operator&lt;" argument-type="QLatin1String"/>
-    <rejection function-name="operator&lt;" argument-type="const QLatin1String&amp;"/>
-    <rejection function-name="operator&lt;=" argument-type="QLatin1String"/>
-    <rejection function-name="operator&lt;=" argument-type="const QLatin1String&amp;"/>
-    <rejection function-name="operator>" argument-type="QLatin1String"/>
-    <rejection function-name="operator>" argument-type="const QLatin1String&amp;"/>
-    <rejection function-name="operator>=" argument-type="QLatin1String"/>
-    <rejection function-name="operator>=" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="const QLatin1String&amp;"/>
 
-    <rejection function-name="operator==" argument-type="QLatin1StringView"/>
-    <rejection function-name="operator!=" argument-type="QLatin1StringView"/>
-    <rejection function-name="operator&lt;" argument-type="QLatin1StringView"/>
-    <rejection function-name="operator&lt;=" argument-type="QLatin1StringView"/>
-    <rejection function-name="operator>" argument-type="QLatin1StringView"/>
-    <rejection function-name="operator>=" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QLatin1StringView"/>
 
-    <rejection function-name="operator==" argument-type="QByteArrayView"/>
-    <rejection function-name="operator!=" argument-type="QByteArrayView"/>
-    <rejection function-name="operator&lt;" argument-type="QByteArrayView"/>
-    <rejection function-name="operator&lt;=" argument-type="QByteArrayView"/>
-    <rejection function-name="operator>" argument-type="QByteArrayView"/>
-    <rejection function-name="operator>=" argument-type="QByteArrayView"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QByteArrayView"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QByteArrayView"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QByteArrayView"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QByteArrayView"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QByteArrayView"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QByteArrayView"/>
 
-    <rejection function-name="operator==" argument-type="QAnyStringView"/>
-    <rejection function-name="operator!=" argument-type="QAnyStringView"/>
-    <rejection function-name="operator&lt;" argument-type="QAnyStringView"/>
-    <rejection function-name="operator&lt;=" argument-type="QAnyStringView"/>
-    <rejection function-name="operator>" argument-type="QAnyStringView"/>
-    <rejection function-name="operator>=" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QAnyStringView"/>
 
     <modify-function signature="operator+(QString)" remove="all"/>
     <modify-function signature="operator+(const QString&amp;)" remove="all"/>
