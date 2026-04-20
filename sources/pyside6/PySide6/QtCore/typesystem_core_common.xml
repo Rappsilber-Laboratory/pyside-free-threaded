@@ -2199,6 +2199,12 @@
 
 
     <modify-function signature="operator+=(const char*)" remove="all"/>
+    <modify-function signature="operator+=(QString)" remove="all"/>
+    <modify-function signature="operator+=(const QString&amp;)" remove="all"/>
+    <modify-function signature="operator+=(QLatin1String)" remove="all"/>
+    <modify-function signature="operator+=(QChar)" remove="all"/>
+    <modify-function signature="operator+=(const QChar&amp;)" remove="all"/>
+
     <modify-function signature="operator+(QByteArray,const char*)" remove="all"/>
     <modify-function signature="operator+(const char*,QByteArray)" remove="all"/>
     <modify-function signature="operator+(QByteArray,const char*)" remove="all"/>
