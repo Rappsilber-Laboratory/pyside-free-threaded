@@ -8,38 +8,43 @@
     <load-typesystem name="templates/core_common.xml" generate="no"/>
 
     <custom-type name="list of QAbstractAnimation"/>
-    <rejection class="QByteArray" function-name="operator==" argument-type="QString"/>
-    <rejection class="QByteArray" function-name="operator==" argument-type="const QString&amp;"/>
-    <rejection class="QByteArray" function-name="operator!=" argument-type="QString"/>
-    <rejection class="QByteArray" function-name="operator!=" argument-type="const QString&amp;"/>
-    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QString"/>
-    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QString&amp;"/>
-    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QString"/>
-    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QString&amp;"/>
-    <rejection class="QByteArray" function-name="operator>" argument-type="QString"/>
-    <rejection class="QByteArray" function-name="operator>" argument-type="const QString&amp;"/>
-    <rejection class="QByteArray" function-name="operator>=" argument-type="QString"/>
-    <rejection class="QByteArray" function-name="operator>=" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type=".*QString.*"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type=".*QString.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type=".*QString.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type=".*QString.*"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type=".*QString.*"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type=".*QString.*"/>
 
-    <rejection class="QByteArray" function-name="operator==" argument-type="QChar"/>
-    <rejection class="QByteArray" function-name="operator==" argument-type="const QChar&amp;"/>
-    <rejection class="QByteArray" function-name="operator!=" argument-type="QChar"/>
-    <rejection class="QByteArray" function-name="operator!=" argument-type="const QChar&amp;"/>
-    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QChar"/>
-    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type=".*QChar.*"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type=".*QChar.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type=".*QChar.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type=".*QChar.*"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type=".*QChar.*"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type=".*QChar.*"/>
 
-    <rejection class="QByteArray" function-name="operator==" argument-type="QLatin1String"/>
-    <rejection class="QByteArray" function-name="operator==" argument-type="const QLatin1String&amp;"/>
-    <rejection class="QByteArray" function-name="operator!=" argument-type="QLatin1String"/>
-    <rejection class="QByteArray" function-name="operator!=" argument-type="const QLatin1String&amp;"/>
-    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QLatin1String"/>
-    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QLatin1String&amp;"/>
-    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QLatin1String"/>
-    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QLatin1String&amp;"/>
-    <rejection class="QByteArray" function-name="operator>" argument-type="QLatin1String"/>
-    <rejection class="QByteArray" function-name="operator>" argument-type="const QLatin1String&amp;"/>
-    <rejection class="QByteArray" function-name="operator>=" argument-type="QLatin1String"/>
-    <rejection class="QByteArray" function-name="operator>=" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type=".*QLatin1String.*"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type=".*QLatin1String.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type=".*QLatin1String.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type=".*QLatin1String.*"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type=".*QLatin1String.*"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type=".*QLatin1String.*"/>
+
+    <rejection class="QByteArray" function-name="operator==" argument-type=".*QByteArrayView.*"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type=".*QByteArrayView.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type=".*QByteArrayView.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type=".*QByteArrayView.*"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type=".*QByteArrayView.*"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type=".*QByteArrayView.*"/>
+
+    <rejection class="QByteArray" function-name="operator==" argument-type=".*QAnyStringView.*"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type=".*QAnyStringView.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type=".*QAnyStringView.*"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type=".*QAnyStringView.*"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type=".*QAnyStringView.*"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type=".*QAnyStringView.*"/>
+
+    <rejection class="QByteArray" function-name="operator\+"/>
+    <rejection class="QByteArray" function-name="operator\+="/>
     <custom-type name="PySideSignalInstance"
                  check-function="PySide::Signal::checkInstanceType"/>
 <!--
