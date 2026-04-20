@@ -2108,128 +2108,69 @@
             <add-conversion type="PyString" check="Shiboken::String::check(%in) &amp;&amp; !PyUnicode_Check(%in)" file="../glue/qtcore.cpp" snippet="conversion-qbytearray-pystring"/>
         </target-to-native>
     </conversion-rule>
-    <modify-function signature="operator==(QString)const" remove="all"/>
-    <modify-function signature="operator!=(QString)const" remove="all"/>
-    <modify-function signature="operator&lt;(QString)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QString)const" remove="all"/>
-    <modify-function signature="operator>(QString)const" remove="all"/>
-    <modify-function signature="operator>=(QString)const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="const QString&amp;"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="const QString&amp;"/>
 
-    <modify-function signature="operator==(const QString &amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QString &amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QString &amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QString &amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QString &amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QString &amp;)const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QString"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QString"/>
 
-    <modify-function signature="operator==(const QString&amp;) const" remove="all"/>
-    <modify-function signature="operator!=(const QString&amp;) const" remove="all"/>
-    <modify-function signature="operator&lt;(const QString&amp;) const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QString&amp;) const" remove="all"/>
-    <modify-function signature="operator>(const QString&amp;) const" remove="all"/>
-    <modify-function signature="operator>=(const QString&amp;) const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QChar"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QChar"/>
 
-    <modify-function signature="operator==(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator!=(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator&lt;(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator>(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator>=(const QString &amp;) const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="const QChar&amp;"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="const QChar&amp;"/>
 
-    <modify-function signature="operator==(QChar)const" remove="all"/>
-    <modify-function signature="operator!=(QChar)const" remove="all"/>
-    <modify-function signature="operator&lt;(QChar)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QChar)const" remove="all"/>
-    <modify-function signature="operator>(QChar)const" remove="all"/>
-    <modify-function signature="operator>=(QChar)const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QAnyStringView"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QAnyStringView"/>
 
-    <modify-function signature="operator==(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QChar&amp;)const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="const QAnyStringView&amp;"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="const QAnyStringView&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QAnyStringView&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QAnyStringView&amp;"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="const QAnyStringView&amp;"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="const QAnyStringView&amp;"/>
 
-    <modify-function signature="operator==(QByteArrayView)const" remove="all"/>
-    <modify-function signature="operator!=(QByteArrayView)const" remove="all"/>
-    <modify-function signature="operator&lt;(QByteArrayView)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QByteArrayView)const" remove="all"/>
-    <modify-function signature="operator>(QByteArrayView)const" remove="all"/>
-    <modify-function signature="operator>=(QByteArrayView)const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QLatin1String"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QLatin1String"/>
 
-    <modify-function signature="operator==(const QByteArrayView&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QByteArrayView&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QByteArrayView&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QByteArrayView&amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QByteArrayView&amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QByteArrayView&amp;)const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="const QLatin1String&amp;"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="const QLatin1String&amp;"/>
 
-    <modify-function signature="operator==(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator!=(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator&lt;(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator>(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator>=(QAnyStringView)const" remove="all"/>
+    <rejection class="QByteArray" function-name="operator==" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator!=" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator&lt;" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator&lt;=" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator>" argument-type="QLatin1StringView"/>
+    <rejection class="QByteArray" function-name="operator>=" argument-type="QLatin1StringView"/>
 
-    <modify-function signature="operator==(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QAnyStringView&amp;)const" remove="all"/>
-
-    <modify-function signature="operator>=(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator&lt;(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator>(const QString &amp;) const" remove="all"/>
-    <modify-function signature="operator>=(const QString &amp;) const" remove="all"/>
-
-
-    <modify-function signature="operator==(QLatin1String)const" remove="all"/>
-    <modify-function signature="operator!=(QLatin1String)const" remove="all"/>
-    <modify-function signature="operator&lt;(QLatin1String)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QLatin1String)const" remove="all"/>
-    <modify-function signature="operator>(QLatin1String)const" remove="all"/>
-    <modify-function signature="operator>=(QLatin1String)const" remove="all"/>
-
-    <modify-function signature="operator==(QLatin1StringView)const" remove="all"/>
-    <modify-function signature="operator!=(QLatin1StringView)const" remove="all"/>
-    <modify-function signature="operator&lt;(QLatin1StringView)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QLatin1StringView)const" remove="all"/>
-    <modify-function signature="operator>(QLatin1StringView)const" remove="all"/>
-    <modify-function signature="operator>=(QLatin1StringView)const" remove="all"/>
-
-    <modify-function signature="operator==(const QLatin1String&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QLatin1String&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QLatin1String&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QLatin1String&amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QLatin1String&amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QLatin1String&amp;)const" remove="all"/>
-    <modify-function signature="operator==(QChar)const" remove="all"/>
-    <modify-function signature="operator!=(QChar)const" remove="all"/>
-    <modify-function signature="operator&lt;(QChar)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QChar)const" remove="all"/>
-    <modify-function signature="operator>(QChar)const" remove="all"/>
-    <modify-function signature="operator>=(QChar)const" remove="all"/>
-    <modify-function signature="operator==(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QChar&amp;)const" remove="all"/>
-    <modify-function signature="operator==(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator!=(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator&lt;(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator>(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator>=(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator==(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QAnyStringView&amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QAnyStringView&amp;)const" remove="all"/>
 
 
 
