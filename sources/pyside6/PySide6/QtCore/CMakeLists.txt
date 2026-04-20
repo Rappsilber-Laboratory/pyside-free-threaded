@@ -211,8 +211,8 @@ message(WARNING "SUPPORTED_QT_VERSION: [${SUPPORTED_QT_VERSION}]")
 message(WARNING "QtCore_GEN_DIR: [${QtCore_GEN_DIR}]")
 
 
-if(SUPPORTED_QT_VERSION VERSION_GREATER_EQUAL "6.10.0")
-    message(STATUS "SUPPORTED_QT_VERSION is ${SUPPORTED_QT_VERSION}. Adding qrangemodel_wrapper.cpp")
+if(FALSE) # FORCED SKIP: SUPPORTED_QT_VERSION was ${SUPPORTED_QT_VERSION}
+    message(WARNING "SUPPORTED_QT_VERSION is ${SUPPORTED_QT_VERSION}. Adding qrangemodel_wrapper.cpp")
     list(APPEND QtCore_SRC ${QtCore_GEN_DIR}/qrangemodel_wrapper.cpp)
 endif()
 
