@@ -2115,12 +2115,26 @@
     <modify-function signature="operator>(QString)const" remove="all"/>
     <modify-function signature="operator>=(QString)const" remove="all"/>
 
-    <modify-function signature="operator==(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QString&amp;)const" remove="all"/>
+    <modify-function signature="operator==(const QString &amp;)const" remove="all"/>
+    <modify-function signature="operator!=(const QString &amp;)const" remove="all"/>
+    <modify-function signature="operator&lt;(const QString &amp;)const" remove="all"/>
+    <modify-function signature="operator&lt;=(const QString &amp;)const" remove="all"/>
+    <modify-function signature="operator>(const QString &amp;)const" remove="all"/>
+    <modify-function signature="operator>=(const QString &amp;)const" remove="all"/>
+
+    <modify-function signature="operator==(const QString&amp;) const" remove="all"/>
+    <modify-function signature="operator!=(const QString&amp;) const" remove="all"/>
+    <modify-function signature="operator&lt;(const QString&amp;) const" remove="all"/>
+    <modify-function signature="operator&lt;=(const QString&amp;) const" remove="all"/>
+    <modify-function signature="operator>(const QString&amp;) const" remove="all"/>
+    <modify-function signature="operator>=(const QString&amp;) const" remove="all"/>
+
+    <modify-function signature="operator==(const QString &amp;) const" remove="all"/>
+    <modify-function signature="operator!=(const QString &amp;) const" remove="all"/>
+    <modify-function signature="operator&lt;(const QString &amp;) const" remove="all"/>
+    <modify-function signature="operator&lt;=(const QString &amp;) const" remove="all"/>
+    <modify-function signature="operator>(const QString &amp;) const" remove="all"/>
+    <modify-function signature="operator>=(const QString &amp;) const" remove="all"/>
 
     <modify-function signature="operator==(QChar)const" remove="all"/>
     <modify-function signature="operator!=(QChar)const" remove="all"/>
