@@ -7,6 +7,9 @@
     <load-typesystem name="templates/common.xml" generate="no"/>
     <load-typesystem name="templates/core_common.xml" generate="no"/>
 
+    <custom-type name="list of QAbstractAnimation"/>
+    <custom-type name="PySideSignalInstance"
+                 check-function="PySide::Signal::checkInstanceType"/>
 <!--
     <function signature="qChecksum(QByteArrayView data, Qt::ChecksumType)"/>
 -->
