@@ -2095,21 +2095,47 @@
   <!-- PYSIDE-1913: Disable isNull() for bool cast; __len__ should be used
        instead so that b"" yields False. -->
   <value-type name="QByteArray" isNull="false">
-    <enum-type name="Base64Option" flags="Base64Options"/>
-    <enum-type name="Base64DecodingStatus"/>
-    <value-type name="FromBase64Result"/>
-    <conversion-rule>
-        <target-to-native>
-            <add-conversion type="Py_None" file="../glue/qtcore.cpp" snippet="conversion-pynone"/>
-            <add-conversion type="PyBytes" file="../glue/qtcore.cpp" snippet="conversion-qbytearray-pybytes"/>
-            <add-conversion type="PyByteArray" file="../glue/qtcore.cpp" snippet="conversion-qbytearray-pybytearray"/>
-            <add-conversion type="PyString" check="Shiboken::String::check(%in) &amp;&amp; !PyUnicode_Check(%in)" file="../glue/qtcore.cpp" snippet="conversion-qbytearray-pystring"/>
-        </target-to-native>
-    </conversion-rule>
+    <modify-function signature="operator==(const QString&amp;)const" remove="all"/>
+    <modify-function signature="operator!=(const QString&amp;)const" remove="all"/>
+    <modify-function signature="operator&lt;(const QString&amp;)const" remove="all"/>
+    <modify-function signature="operator&lt;=(const QString&amp;)const" remove="all"/>
+    <modify-function signature="operator>(const QString&amp;)const" remove="all"/>
+    <modify-function signature="operator>=(const QString&amp;)const" remove="all"/>
 
-    <extra-includes>
-      <!-- qt5: this is a pre-defined macro <include file-name="QNoImplicitBoolCast" location="global"/> -->
-    </extra-includes>
+    <modify-function signature="operator==(QString)const" remove="all"/>
+    <modify-function signature="operator!=(QString)const" remove="all"/>
+    <modify-function signature="operator&lt;(QString)const" remove="all"/>
+    <modify-function signature="operator&lt;=(QString)const" remove="all"/>
+    <modify-function signature="operator>(QString)const" remove="all"/>
+    <modify-function signature="operator>=(QString)const" remove="all"/>
+
+    <modify-function signature="operator==(QByteArrayView)const" remove="all"/>
+    <modify-function signature="operator!=(QByteArrayView)const" remove="all"/>
+    <modify-function signature="operator&lt;(QByteArrayView)const" remove="all"/>
+    <modify-function signature="operator&lt;=(QByteArrayView)const" remove="all"/>
+    <modify-function signature="operator>(QByteArrayView)const" remove="all"/>
+    <modify-function signature="operator>=(QByteArrayView)const" remove="all"/>
+
+    <modify-function signature="operator==(const QByteArrayView&amp;)const" remove="all"/>
+    <modify-function signature="operator!=(const QByteArrayView&amp;)const" remove="all"/>
+    <modify-function signature="operator&lt;(const QByteArrayView&amp;)const" remove="all"/>
+    <modify-function signature="operator&lt;=(const QByteArrayView&amp;)const" remove="all"/>
+    <modify-function signature="operator>(const QByteArrayView&amp;)const" remove="all"/>
+    <modify-function signature="operator>=(const QByteArrayView&amp;)const" remove="all"/>
+
+    <modify-function signature="operator==(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator!=(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator&lt;(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator&lt;=(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator>(QByteArray,QString)" remove="all"/>
+    <modify-function signature="operator>=(QByteArray,QString)" remove="all"/>
+
+    <modify-function signature="operator==(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator!=(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator&lt;(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator&lt;=(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator>(QString,QByteArray)" remove="all"/>
+    <modify-function signature="operator>=(QString,QByteArray)" remove="all"/>
 
     <!-- ### These overloads must be removed accept strings with \x00 in their contents -->
     <modify-function signature="append(const char*)" remove="all"/>
@@ -2136,13 +2162,6 @@
     <modify-function signature="operator&lt;=(QString,QByteArray)" remove="all"/>
     <modify-function signature="operator>(QString,QByteArray)" remove="all"/>
     <modify-function signature="operator>=(QString,QByteArray)" remove="all"/>
-
-    <modify-function signature="operator==(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator!=(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator&lt;=(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator>(const QString&amp;)const" remove="all"/>
-    <modify-function signature="operator>=(const QString&amp;)const" remove="all"/>
 
     <modify-function signature="operator==(const QString &amp;)const" remove="all"/>
     <modify-function signature="operator!=(const QString &amp;)const" remove="all"/>
@@ -2189,31 +2208,6 @@
 
 
 
-
-
-
-    <modify-function signature="operator==(QChar)const" remove="all"/>
-    <modify-function signature="operator!=(QChar)const" remove="all"/>
-    <modify-function signature="operator&lt;(QChar)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QChar)const" remove="all"/>
-    <modify-function signature="operator>(QChar)const" remove="all"/>
-    <modify-function signature="operator>=(QChar)const" remove="all"/>
-
-    <modify-function signature="operator==(QString)const" remove="all"/>
-    <modify-function signature="operator!=(QString)const" remove="all"/>
-    <modify-function signature="operator&lt;(QString)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QString)const" remove="all"/>
-    <modify-function signature="operator>(QString)const" remove="all"/>
-    <modify-function signature="operator>=(QString)const" remove="all"/>
-
-    <modify-function signature="operator==(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator!=(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator&lt;(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator&lt;=(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator>(QAnyStringView)const" remove="all"/>
-    <modify-function signature="operator>=(QAnyStringView)const" remove="all"/>
-
-
     <modify-function signature="operator+(QString)" remove="all"/>
     <modify-function signature="operator+(const QString&amp;)" remove="all"/>
     <modify-function signature="operator+(QLatin1String)" remove="all"/>
@@ -2248,24 +2242,6 @@
     </add-function>
     <add-function signature="operator+=(PyByteArray)" return-type="QByteArray">
         <inject-code file="../glue/qtcore.cpp" snippet="qbytearray-operatorplusequal"/>
-    </add-function>
-    <add-function signature="operator==(PyUnicode)" return-type="bool">
-        <inject-code file="../glue/qtcore.cpp" snippet="qbytearray-operatorequalequal"/>
-    </add-function>
-    <add-function signature="operator!=(PyUnicode)" return-type="bool">
-        <inject-code file="../glue/qtcore.cpp" snippet="qbytearray-operatornotequal"/>
-    </add-function>
-    <add-function signature="operator&gt;(PyUnicode)" return-type="bool">
-        <inject-code file="../glue/qtcore.cpp" snippet="qbytearray-operatorgreater"/>
-    </add-function>
-    <add-function signature="operator&gt;=(PyUnicode)" return-type="bool">
-        <inject-code file="../glue/qtcore.cpp" snippet="qbytearray-operatorgreaterequal"/>
-    </add-function>
-    <add-function signature="operator&lt;(PyUnicode)" return-type="bool">
-        <inject-code file="../glue/qtcore.cpp" snippet="qbytearray-operatorlower"/>
-    </add-function>
-    <add-function signature="operator&lt;=(PyUnicode)" return-type="bool">
-        <inject-code file="../glue/qtcore.cpp" snippet="qbytearray-operatorlowerequal"/>
     </add-function>
     <!-- ### -->
 
